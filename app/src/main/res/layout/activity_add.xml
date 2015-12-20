@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.hyunji.everydaylifelogger.addActivity">
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:id="@+id/et_title"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_store"
+        android:text="저장"
+        android:layout_alignParentRight="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_cancle"
+        android:text="취소"
+        android:layout_below="@+id/bt_store"
+        android:layout_alignParentRight="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식사"
+        android:id="@+id/bt_tlrtk"
+        android:layout_below="@+id/et_title"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="교육"
+        android:id="@+id/bt_rydbr"
+        android:layout_below="@+id/et_title"
+        android:layout_toRightOf="@+id/bt_tlrtk"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="문화"
+        android:id="@+id/bt_ansghk"
+        android:layout_below="@+id/bt_tlrtk"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="데이트"
+        android:id="@+id/bt_epdlxm"
+        android:layout_below="@+id/bt_tlrtk"
+        android:layout_toRightOf="@+id/bt_ansghk"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여행"
+        android:id="@+id/bt_dugod"
+        android:layout_below="@+id/bt_ansghk"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기타"
+        android:id="@+id/bt_rlxk"
+        android:layout_below="@+id/bt_ansghk"
+        android:layout_toRightOf="@+id/bt_dugod"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="yyyy년 mm월 dd일"
+        android:id="@+id/tv_date"
+        android:layout_below="@+id/bt_rlxk"
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위치 :"
+        android:id="@+id/gps"
+        android:layout_below="@+id/tv_date"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="longtitude, latitude"
+        android:id="@+id/tv_gps"
+        android:layout_below="@+id/gps"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="context:"
+        android:id="@+id/context"
+        android:layout_below="@+id/tv_gps"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_context"
+        android:layout_below="@+id/context"
+        android:layout_alignEnd="@+id/tv_date"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내 위치찾기"
+        android:id="@+id/bt_gps"
+        android:layout_below="@+id/gps"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_date"
+        android:layout_below="@+id/bt_rlxk"
+        android:text="날짜변경"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"        />
+
+</RelativeLayout>
