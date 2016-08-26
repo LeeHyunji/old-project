@@ -1,13 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1 align="center">원 두 콩</h1>
+<p align="center">Find me in app/views/home/index.html.erb</p>
 
 <p align="right"><input class="btn btn-default" id ="mypage_btn" type="button" value="mypage"></p>
-
-  <hr><hr><hr><hr><hr>
   
 <div class="container">
   <nav class="navbar navbar-default">
-    <div class="container-fluid" style = "margin-top : 40px">
+    <div class="container-fluid" >
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <form class="navbar-form navbar-left" action = "/home/search_bar" method ="get" >
           <input name = "search_bar" type="text" class="form-control" placeholder="Search">
@@ -31,12 +29,6 @@
   <% end %>
 </div>
 
-<%# if user_signed_in? %>
-  
-<%# else %>
-
-<%# end %>
-
 <input class="btn btn-default" id ="like_btn" type="button" value="Like">
 
 <div id ="section">
@@ -44,12 +36,12 @@
 </div>
 
 
-
-
   <script type="text/javascript">
 
     var user_signed_in = <%= user_signed_in? %> ;
-    
+    var cafe_id = 1;
+    var user_id = 1;
+  
     $(function(){
       $("#inlineCheckbox1").click(function(){
         var is_checked = $(this).is(":checked");
@@ -95,9 +87,6 @@
       });
     });
     
-  var cafe_id = 1;
-  var user_id = 1;
-  
   $("#like_btn").click(function(){
     $.ajax({
       method: "POST",
