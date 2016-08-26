@@ -1,0 +1,30 @@
+
+<div class="row">
+  <div class="col-xs-5" align="center">가고 싶은 카페<hr><input class="btn btn-default" id ="scrap_cafe_look" type="button" value="내가 스크랩한 카페"></div>
+  <div class="col-xs-5" align="center">내가 등록한 카페<hr><br>탐앤탐스<br>카페베네</div>
+</div>
+
+<div id="section">
+  
+</div>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    var user_id = <%= current_user.id %> ;
+    $("#scrap_cafe_look").click(function(){
+      $.ajax({
+        method: "POST",
+        url: "/home/mypage_search",
+        data: { user_id: user_id },
+        success: function(data){
+        alert('성공');
+          for(i=0; i<data.cafes.length; i++){
+            $("#section").append("<p>" + data.cafes[i].cafe_id + "</p><br>");
+          }
+        } 
+      });
+    });
+  });
+</script>

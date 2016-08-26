@@ -1,0 +1,121 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<p align="right"><input class="btn btn-default" id ="mypage_btn" type="button" value="mypage"></p>
+
+  <hr><hr><hr><hr><hr>
+  
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid" style = "margin-top : 40px">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left" action = "/home/search_bar" method ="get" >
+          <input name = "search_bar" type="text" class="form-control" placeholder="Search">
+          <button type="submit" class="btn btn-primary" >검색</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox1" name="option" value="false"> 24시간
+  </label>
+  <label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox2" name="option" value="false"> 콘센트 많은가?
+  </label>
+</div>
+<hr>
+<div id="section" value="hidden">
+  <% @cafes.each do |c| %>
+    <%= c.name %>
+    <%= c.region %>
+  <% end %>
+</div>
+
+<%# if user_signed_in? %>
+  
+<%# else %>
+
+<%# end %>
+
+<input class="btn btn-default" id ="like_btn" type="button" value="Like">
+
+<div id ="section">
+  
+</div>
+
+
+
+
+  <script type="text/javascript">
+
+    var user_signed_in = <%= user_signed_in? %> ;
+    
+    $(function(){
+      $("#inlineCheckbox1").click(function(){
+        var is_checked = $(this).is(":checked");
+        if(is_checked){
+          $(this).val("true");
+        }else{
+          $(this).val("false");
+        }
+      });
+      
+      $("#inlineCheckbox2").click(function(){
+        var is_checked = $(this).is(":checked");
+        if(is_checked){
+          $(this).val("true");
+        }else{
+          $(this).val("false");
+        }
+      });
+      
+      $("#mypage_btn").click(function(){
+        if (user_signed_in)
+          location.href='/home/coffee';
+        else
+          location.href='/users/sign_in';
+      });
+          
+      $("#search_btn").click(function(){
+        $.ajax({
+          method: "POST",
+          url: "/home/search",
+          data: { overnight: $("#inlineCheckbox1").val() ,
+                  outlet: $("#inlineCheckbox2").val()},
+          success: function(data){
+            for(i=0; i<data.cafes.length; i++){
+              $("#section").append("<p>" + data.cafes[i].name + "</p><br>");
+              $("#section").append("<p>" + data.cafes[i].open_time + "</p><br>");
+              $("#section").append("<p>" + data.cafes[i].close_time + "</p><br>");
+              $("#section").append("<p>" + data.cafes[i].lat + "</p><br>");
+              $("#section").append("<p>" + data.cafes[i].lng + "</p><br>");
+            }
+          } 
+        });
+      });
+    });
+    
+  var cafe_id = 1;
+  var user_id = 1;
+  
+  $("#like_btn").click(function(){
+    $.ajax({
+      method: "POST",
+      url: "/home/click_count",
+      data: { cafe_id: cafe_id,
+      user_id: user_id },
+      success: function(data){
+      alert('성공');
+        $("#section").append("<p>" + data.cafe.name + "</p><br>");
+        $("#section").append("<p>" + data.cafe.open_time + "</p><br>");
+        $("#section").append("<p>" + data.cafe.close_time + "</p><br>");
+        // data.cafe.scrap_count+=1;
+        $("#section").append("<p>" + data.cafe.scrap_count + "</p><br>");
+        $("#section").append("<p>" + data.cafe.lat + "</p><br>");
+        $("#section").append("<p>" + data.cafe.lng + "</p><br>");
+          // }
+      } 
+    });
+  });
+  
+  </script>
