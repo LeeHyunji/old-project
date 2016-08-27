@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     # @cafes = Cafe.search(params[:search])
   end
   def search
-    @search_keyword = params[:search_bar]
+    #@search_keyword = params[:search_bar]
     outlet = Cafe.where(overnight: to_boolean(params[:overnight]), outlet: to_boolean(params[:outlet]))
     # outlet = Cafe.all
     # redirect_to '/home/index'
@@ -88,10 +88,12 @@ class HomeController < ApplicationController
   end
   
   def mypage_search
-       user_cafe = Like.where("user_id Like ?", params[:user_id])
-       
+      # user_cafe = Like.where("user_id Like ?", params[:user_id])
+      user = current_user;
+      caves = user.caves;
+      
        render :json => {
-      :cafes => user_cafe
+      :caves => caves
     }
   end
 end

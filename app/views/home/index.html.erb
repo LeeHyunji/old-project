@@ -41,8 +41,9 @@
     var user_signed_in = <%= user_signed_in? %> ;
     var cafe_id = 1;
     var user_id = 1;
-  
+ 
     $(function(){
+      
       $("#inlineCheckbox1").click(function(){
         var is_checked = $(this).is(":checked");
         if(is_checked){
@@ -61,7 +62,7 @@
         }
       });
       
-      $("#mypage_btn").click(function(){
+      $("#mypage_btn").click(function(){ //mypage 버튼 => 로그인이 됬을 때만 실행 가능
         if (user_signed_in)
           location.href='/home/coffee';
         else
@@ -87,24 +88,27 @@
       });
     });
     
-  $("#like_btn").click(function(){
-    $.ajax({
-      method: "POST",
-      url: "/home/click_count",
-      data: { cafe_id: cafe_id,
-      user_id: user_id },
-      success: function(data){
-      alert('성공');
-        $("#section").append("<p>" + data.cafe.name + "</p><br>");
-        $("#section").append("<p>" + data.cafe.open_time + "</p><br>");
-        $("#section").append("<p>" + data.cafe.close_time + "</p><br>");
-        // data.cafe.scrap_count+=1;
-        $("#section").append("<p>" + data.cafe.scrap_count + "</p><br>");
-        $("#section").append("<p>" + data.cafe.lat + "</p><br>");
-        $("#section").append("<p>" + data.cafe.lng + "</p><br>");
-          // }
-      } 
-    });
-  });
+      $("#like_btn").click(function(){ //like 버튼 => 로그인이 됬을 때만 실행 가능
+        if (user_signed_in)
+          $.ajax({
+          method: "POST",
+          url: "/home/click_count",
+          data: { cafe_id: cafe_id,
+          user_id: user_id },
+          success: function(data){
+          alert('성공');
+            $("#section").append("<p>" + data.cafe.name + "</p><br>");
+            $("#section").append("<p>" + data.cafe.open_time + "</p><br>");
+            $("#section").append("<p>" + data.cafe.close_time + "</p><br>");
+              // data.cafe.scrap_count+=1;
+            $("#section").append("<p>" + data.cafe.scrap_count + "</p><br>");
+            $("#section").append("<p>" + data.cafe.lat + "</p><br>");
+            $("#section").append("<p>" + data.cafe.lng + "</p><br>");
+                // }
+          } 
+        });
+        else
+          location.href='/users/sign_in';
+      });
   
   </script>
