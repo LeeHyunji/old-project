@@ -6,13 +6,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '5dd72c02f67e590a91409525b9f9b876a396eaa86bbecea22e6709e4aa139088050a54a7ec7c178d141d37f136ee9b3ddf6600179c39847ffba0fffcf7a6b00e'
+  # config.secret_key = '0c44eaa45633d2596376c299d4798c7d2dbe585a42fc6bf2ee8101b5862ecbe31109e0256076ae515256ad0725eb785eb20f4eefb7e5d184c2e74a7467da9045'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'cmg002@naver.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '1bdab177eca463fc856447431c037d6d7d8b850094f9e3676cfb6ef03914a4063e47a68a1fe7cce911ad9429f6b1c600664cf2f1694a1aa59ed27e6113086918'
+  # config.pepper = '2476ffd44561c7b6a0bde7b69ce6c60f7dcf099041e6faad7789c4b6e2f69e27fae3483de2b024ded78e9dbb5db32b0e4ba5e99a0db837dbca04ba6f8992f04d'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -271,4 +271,5 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.omniauth :facebook, "307403836273289", "9f0862f6e21ba0e7d57b2d43dfd47c9b"
 end
