@@ -1,0 +1,239 @@
+
+        <div id="cafe-header">
+            <div class="cafe-cover"></div>
+            <div class="mask"></div>
+            <div class="wrap">
+                <div class="cafe-title">
+                    <span class="cafe-name"> <%= @cafe.name %> </span>
+<!--
+                    <br>
+                    <span class="cafe-ex">조용하고 한적한 카페</span>
+-->
+                </div>
+            </div>
+            <a href="/" class="scrap"></a>
+            <div class="cafe-loca">
+<!--
+                <span class="laca-icon">
+                </span>
+-->
+                <span class="location"><%= @cafe.place.name %> </span>
+            </div>
+            <div class="cafe-detail">
+                <ul class="grid-7">
+                    <% @cafe.cafe_images.each do |i| %>
+                    <li class="grid-box">
+                        <a href="/" class="cafe-box">
+                            <div class="inner">
+                                <img src="<%=i.image_url%>">
+                            </div>
+                        </a>
+                    </li>
+                    <% end %>
+                    
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont02.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont01.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont09.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont04.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont05.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont06.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont08.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                    <!--<li class="grid-box">-->
+                    <!--    <a href="/" class="cafe-box">-->
+                    <!--        <div class="inner">-->
+                    <!--            <img src="/assets/img/cafe/romont07.jpg">-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+        <div id="contents">
+            <div class="container">
+                <div class="icon-section">
+                    <div class="cafe-icon">
+                        <span class="icon-area"></span>
+                        <br>
+                        <span class="txt-area"><strong class="pink"><%= @cafe.wifi_count %>칸</strong>/ 4칸</span>
+                    </div>
+                    <div class="cafe-icon">
+                        <span class="icon-area"></span>
+                        <br>
+                        <span class="txt-area"><strong class="pink"><%= @cafe.outlet_count%>구</strong>/ 테이블</span>
+                    </div>
+                    
+                    
+                    <% if @cafe.quiet == true %>
+                        <div class="cafe-icon">
+                            <span class="icon-area"></span>
+                            <br>
+                            <span class="txt-area">조용함</span>
+                        </div>
+                    <% end %>
+                    <% if @cafe.dessert == true %>
+                        <div class="cafe-icon">
+                            <span class="icon-area"></span>
+                            <br>
+                            <span class="txt-area">디저트</span>
+                        </div>
+                    <% end %>
+                    <% if @cafe.etc == true %>
+                        <div class="cafe-icon">
+                            <span class="icon-area"></span>
+                            <br>
+                            <span class="txt-area">이색</span>
+                        </div>
+                    <% end %>
+                        
+                    
+                    
+                </div>
+                <div class="cafe-icon-ex">
+                    위의 카페의 특징은 대략적인 정보로 정확하지 않을 수 있습니다. 참고해주시기 바랍니다.
+                </div>
+                <hr>
+                <div class="cafe-intro">
+                    "<%= @cafe.comment %>"
+                </div>
+                <hr>
+                <div class="cafe-info">
+                    <ul class="info-list">
+                        <li class="cafe-ex">
+<!--                            <span class="icon-small"></span>-->
+                            <span class="text-cafe-title">주소</span>
+                            <span class="text-cafe"><%= @cafe.address %></span>
+                        </li>
+                        <li class="cafe-ex">
+<!--                            <span class="icon-small"></span>-->
+                            <span class="text-cafe-title">영업시간</span>
+                            <span class="text-cafe"><%= @cafe.open_time %></span>
+                        </li>
+                        <li class="cafe-ex">
+<!--                            <span class="icon-small"></span>-->
+                            <span class="text-cafe-title">전화</span>
+                            <span class="text-cafe"><%= @cafe.phone %></span>
+                        </li>
+                        <li class="cafe-ex">
+<!--                            <span class="icon-small"></span>-->
+                            <span class="text-cafe-title">가격</span>
+                            <span class="text-cafe"><%= @cafe.price %></span>
+                        </li>
+                        <li class="cafe-ex">
+<!--                            <span class="icon-small"></span>-->
+                            <span class="text-cafe-title">메뉴</span>
+                            <span class="menu-cafe">
+                    <a href="/assets/img/cafe-menu/SAM_6139.JPG" class="img" data-lightbox="image-2" data-title="표지">
+                        <img src="/assets/img/cafe-menu/SAM_6139.JPG" class="img-responsive" alt="2">
+                    </a>
+                    <a href="/assets/img/cafe-menu/SAM_6138-01.JPG.jpg" class="img" data-lightbox="image-1" data-title="음료">
+                        <img src="/assets/img/cafe-menu/SAM_6138.JPG" class="img-responsive" alt="1">
+                    </a>
+                    <a href="/assets/img/cafe-menu/SAM_6140.JPG" class="img" data-lightbox="image-3" data-title="Your caption">
+                        <img src="/assets/img/cafe-menu/SAM_6140.JPG" class="img-responsive" alt="3">
+                    </a>
+                    <a href="/assets/img/cafe-menu/SAM_6141.JPG" class="img" data-lightbox="image-4" data-title="Your caption">
+                        <img src="/assets/img/cafe-menu/SAM_6141.JPG" class="img-responsive" alt="4">
+                    </a>
+                    <a href="/assets/img/cafe-menu/SAM_6142.JPG" class="img" data-lightbox="image-5" data-title="Your caption">
+                        <img src="/assets/img/cafe-menu/SAM_6142.JPG" class="img-responsive" alt="5">
+                    </a>
+                    <a href="/assets/img/cafe-menu/SAM_6143.JPG" class="img" data-lightbox="image-6" data-title="Your caption">
+                        <img src="/assets/img/cafe-menu/SAM_6143.JPG" class="img-responsive" alt="6">
+                    </a>
+<!--
+                                <a href="assets/img/cafe-menu/SAM_6138-01.JPG.jpg" class="img" target=_blank><img src="assets/img/cafe-menu/SAM_6138-01.JPG.jpg"></a>
+                                <a href="assets/img/cafe-menu/SAM_6139.JPG" class="img" target=_blank><img src="assets/img/cafe-menu/SAM_6139.JPG"></a>
+                                <a href="assets/img/cafe-menu/SAM_6140.JPG" class="img" target=_blank><img src="assets/img/cafe-menu/SAM_6140.JPG"></a>
+                                <a href="assets/img/cafe-menu/SAM_6141.JPG" class="img" target=_blank><img src="assets/img/cafe-menu/SAM_6141.JPG"></a>
+                                <a href="assets/img/cafe-menu/SAM_6142.JPG" class="img" target=_blank><img src="assets/img/cafe-menu/SAM_6142.JPG"></a>
+-->
+<!--                                <div class="mask"></div>-->
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="nmap-container">
+                        <div class="nmap-base-plane" id = "map"></div>
+                    </div>
+                    <div class="info-ad">
+                        <div><a href="#">잘못된 정보 고쳐주기</a></div>
+                        <div><a href="#">폐점한 가게 알려주기</a></div>
+                    </div>
+                </div>
+                <div id="right-float-list">
+                    <ul class="cafe-reco-list">
+                        <li class="cafe-text">비슷한 카페</li>
+                        <li class="cafe-img">
+                            <a href="#"><img src="/assets/img/cafe/cafe04.png"></a>
+                        </li>
+                        <li class="cafe-img">
+                            <a href="#"><img src="/assets/img/cafe/cafe05.png"></a>
+                        </li>
+                        <li class="cafe-img">
+                            <img src="/assets/img/cafe/cafe06.png">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-dribbble fa-2x"></i></a>
+                </div>
+                <h6>&copy; 2016 Development By Wonducong Team</h6>
+            </div>
+        </div>
+        
+   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=CuFCDHiHBNJqHunGKxD2"></script>
+
+<script>
+  var mapOptions = {
+      center: new naver.maps.LatLng(<%= @cafe.lat %>, <%= @cafe.lng %>),
+      zoom: 10
+  };
+  var map = new naver.maps.Map('map', mapOptions);
+</script>

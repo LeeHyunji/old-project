@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # post 'email' => 'home#email'
   post 'home/click_count'
   post 'home/mypage_search'
+  get 'cafe/detail/:id' => 'cafe#detail'
+  get 'cafe/list/:id' => 'cafe#list'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

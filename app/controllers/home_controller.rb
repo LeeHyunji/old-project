@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @search_keyword = params[:search_bar]
-    @cafes = Cafe.where("name LIKE ? OR region LIKE ?", "%#{@search_keyword}%", "%#{@search_keyword}%")
-    # @cafes = Cafe.search(params[:search])
+   @cafe = Cafe.all
+   @place = Place.all
   end
   def search
     #@search_keyword = params[:search_bar]

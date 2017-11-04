@@ -1,39 +1,417 @@
-<h1 align="center">원 두 콩</h1>
-<p align="center">Find me in app/views/home/index.html.erb</p>
 
-<p align="right"><input class="btn btn-default" id ="mypage_btn" type="button" value="mypage"></p>
+
+
+
+
+
+    <!-- Preloader
+	============================================= -->
+    <!--<div class="preloader"><i class="fa fa-circle-o-notch fa-spin fa-2x"></i></div>-->
+    <!-- Header
+	============================================= -->
+    <section class="main-header">
+
+       <div class="main_nav">
+           <h1 class="main_logo">
+             <a href="#" title="wanducong" class="sprite logo_link"></a>
+           </h1>
+       <!-- 로그인 / 회원 가입 / 회원 정보 부분 -->
+           <% if user_signed_in? %>
+               <div class="main_menu">
+                 <%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %>
+               </div>
+            <% else %>
+                <div class="main_menu">
+                 <a href="/users/sign_in" class="login_link">로그인</a>
+               </div>
+            <% end %>
+       
+           
+         </div>
+
+        <div id="owl-hero" class="owl-carousel owl-theme" style="height:600px;">
+            <div class="item banner1" style="background-image: url(assets/sliders/bannerone.png)">
+                <div class="caption">
+                    <h6>여자 / 로맨틱 / 성공적</h6>
+                    <h1>홍대 요즘 핫한<br> 스터디 카페</h1>
+                </div>
+            </div>
+            <div class="item banner2" style="background-image: url(assets/sliders/bannertwo.png)">
+                <div class="caption">
+                    <h6>트렌드세터는 혜화를 가야지</h6>
+                    <h1>혜화 집중 잘되는<br>조용한 카페</h1>
+                </div>
+            </div>
+            <div class="item banner3" style="background-image: url(assets/sliders/bannerone.png)">
+                <div class="caption">
+                    <h6>어디 갈 건대?</h6>
+                    <h1>건대 뜨고 있는<br> 신생 카페</h1>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="search">
+        <div class="container">
+            <div class="menu-search col-md-12">
+              <input class="search-field col-md-12" type="text" name="s" id="s" placeholder="카페 검색하기" required>
+              <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+    </section>
+
+    <div class="filter-item">
+        <div class="container">
+            <div class="filter-title">필터로 검색하기</div>
+            <p class="cafe-wrap">
+                <input type="checkbox" id="loca01" name="loca" class="loca"/>
+                <label for="loca01" class="loca">
+                    홍대입구/합정
+                </label>
+                <input type="checkbox" id="loca02" name="loca" class="loca"/>
+                <label for="loca02" class="loca">
+                    신촌
+                </label>
+                <input type="checkbox" id="loca03" name="loca" class="loca"/>
+                <label for="loca03" class="loca">
+                    상수
+                </label>
+                <input type="checkbox" id="loca04" name="loca" class="loca"/>
+                <label for="loca04" class="loca">
+                    건대입구
+                </label>
+                <input type="checkbox" id="loca05" name="loca" class="loca"/>
+                <label for="loca05" class="loca">
+                    성신여대/혜화
+                </label>
+            </p>
+        </div>
+    </div>
+    <div class="container">
+    <hr>
+    </div>
+
+    <div class="filter-item">
+        <div class="container">
+            <p class="cafe-wrap">
+                <input type="checkbox" id="food01" name="food" class="food"/>
+                <label for="food01" class="sprite food01"></label>
+                <input type="checkbox" id="food02" name="food" class="food"/>
+                <label for="food02" class="sprite food02"></label>
+                <input type="checkbox" id="food03" name="food" class="food"/>
+                <label for="food03" class="sprite food03"></label>
+                <input type="checkbox" id="food04" name="food" class="food"/>
+                <label for="food04" class="sprite food04"></label>
+                <input type="checkbox" id="food05" name="food" class="food"/>
+                <label for="food05" class="sprite food05"></label>
+            </p>
+        </div>
+    </div>
+    <div class="btn-section">
+        <div class="container">
+            <button type="submit" onclick="common_ga('PU_DWN_FILTER', 'CLICK_FILTER_APPLY')" value="" ng-click="do_filter_search()" class="btn-custom">적용</button>
+        </div>
+    </div>
+    <!-- 카페리스트
+	============================================= -->
+<!--
+    -->
+    <section id="cafe-list">
+        <div class="container">
+            <ul class="grid-4">
+                <% @cafe.each do |c| %>
+                <li class="grid col-md-3">
+                    <a href="/cafe/detail/<%=c.id%>" class="cafe-box">
+                        <div class="box">
+                            <img src="assets/cafe/cafe01.png">
+                        </div>
+                        <div class="inner">
+                            <span class="cafe-title"><%=c.name%></span>
+                            <br>
+                            <br>
+                        </div>
+                    </a>
+                    <a href="/" class="sprite scrap">
+                    </a>
+                </li>
+                <% end %>
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe02.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe03.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe04.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe05.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe06.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe07.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--<li class="grid col-md-3">-->
+                <!--    <a href="#" class="cafe-box">-->
+                <!--        <div class="box">-->
+                <!--            <img src="assets/cafe/cafe08.png">-->
+                <!--        </div>-->
+                <!--        <div class="inner">-->
+                <!--            <span class="cafe-title">카페K375</span>-->
+                <!--            <br>-->
+                <!--            <span class="cafe-info">분위기 좋고 조용한 카페</span>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--    <a href="/" class="sprite scrap">-->
+                <!--    </a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div class="more-btn">
+            <div class="container">
+                <a href="/" class="more-click">
+                    더보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio
+   ============================================= -->
+    <section id="portfolio">
+        <div class="container-fluid">
+            <h2>지역별 인기 카페</h2>
+            <hr class="sep">
+            <div class="row" id="section">
+                <% @place.each do |cate| %>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                    <a class="portfolio-box" href="cafe/list/<%=cate.id%>">
+                        <img src="assets/portfolio/<%=cate.id%>.jpg" class="img-responsive" alt="1">
+                        <div class="portfolio-box-caption"> 
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    <%= cate.name%>
+                                </div>
+                                <div class ="project-name">
+                                    <%= cate.comment %>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% end %>
+                <!--<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">-->
+                <!--    <a href="hot-cafe-hye.html" class="portfolio-box">-->
+                <!--        <img src="assets/portfolio/2.jpg" class="img-responsive" alt="2">-->
+                <!--        <div class="portfolio-box-caption">-->
+                <!--            <div class="portfolio-box-caption-content">-->
+                <!--                <div class="project-category text-faded">-->
+                <!--                    혜화-->
+                <!--                </div>-->
+                <!--               <div class ="project-name">-->
+                <!--                    내가 바로 트렌드세터!-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">-->
+                <!--    <a href="hot-cafe-kon.html" class="portfolio-box" >-->
+                <!--        <img src="assets/portfolio/3.jpg" class="img-responsive" alt="3">-->
+                <!--        <div class="portfolio-box-caption">-->
+                <!--            <div class="portfolio-box-caption-content">-->
+                <!--                <div class="project-category text-faded">-->
+                <!--                    건대/성수-->
+                <!--                </div>-->
+                <!--                <div class ="project-name">-->
+                <!--                    어디로 가실 건대?-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">-->
+                <!--    <a href="hot-cafe-kyo.html" class="portfolio-box">-->
+                <!--        <img src="assets/portfolio/4.jpg" class="img-responsive" alt="4">-->
+                <!--        <div class="portfolio-box-caption">-->
+                <!--            <div class="portfolio-box-caption-content">-->
+                <!--                <div class="project-category text-faded">-->
+                <!--                    교대-->
+                <!--                </div>-->
+                <!--                <div class ="project-name">-->
+                <!--                    야 나랑 교대 좀 해주라..-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">-->
+                <!--    <a href="hot-cafe-sung.html" class="portfolio-box">-->
+                <!--        <img src="assets/portfolio/5.jpg" class="img-responsive" alt="5">-->
+                <!--        <div class="portfolio-box-caption">-->
+                <!--            <div class="portfolio-box-caption-content">-->
+                <!--                <div class="project-category text-faded">-->
+                <!--                    성신여대-->
+                <!--                </div>-->
+                <!--                <div class ="project-name">-->
+                <!--                    성실한 아이는 성신으로-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">-->
+                <!--    <a href="assets/img/portfolio/6.jpg" class="portfolio-box" data-lightbox="image-6" data-title="Your caption">-->
+                <!--        <img src="assets/portfolio/6.jpg" class="img-responsive" alt="6">-->
+                <!--        <div class="portfolio-box-caption">-->
+                <!--            <div class="portfolio-box-caption-content">-->
+                <!--                <div class="project-category text-faded">-->
+                <!--                    신촌-->
+                <!--                </div>-->
+                <!--                <div class ="project-name">-->
+                <!--                    신촌이 어디니?-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </section>
+   
+    <!-- Footer
+	============================================= -->
+    <div class="footer">
+        <div class="container">
+            <div class="social">
+                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa fa-dribbble fa-2x"></i></a>
+            </div>
+            <h6>&copy; 2016 Development By Wonducong Team</h6>
+        </div>
+    </div>
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <!-- JS PLUGINS -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/jquery.easing.min.js"></script>
+    <!-- <script src="plugins/waypoints/jquery.waypoints.min.js"></script> -->
+    <script src="/assets/js/jquery.countTo.js"></script>
+    <script src="/assets/js/jquery.inview.min.js"></script>
+    <script src="/assets/js/lightbox.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <!-- GOOGLE MAP -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    
+
+
+<!--<p align="right"><input class="btn btn-default" id ="mypage_btn" type="button" value="mypage"></p>-->
   
-<div class="container">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid" >
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left" action = "/home/search_bar" method ="get" >
-          <input name = "search_bar" type="text" class="form-control" placeholder="Search">
-          <button type="submit" class="btn btn-primary" >검색</button>
-        </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" name="option" value="false"> 24시간
-  </label>
-  <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" name="option" value="false"> 콘센트 많은가?
-  </label>
-</div>
-<hr>
-<div id="section" value="hidden">
-  <% @cafes.each do |c| %>
-    <%= c.name %>
-    <%= c.region %>
-  <% end %>
-</div>
-
-<input class="btn btn-default" id ="like_btn" type="button" value="Like">
-
-<div id ="section">
+<!--<div class="container">-->
+<!--  <nav class="navbar navbar-default">-->
+<!--    <div class="container-fluid" >-->
+<!--      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+<!--        <form class="navbar-form navbar-left" action = "/home/search_bar" method ="get" >-->
+<!--          <input name = "search_bar" type="text" class="form-control" placeholder="Search">-->
+<!--          <button type="submit" class="btn btn-primary" >검색</button>-->
+<!--        </form>-->
+<!--      </div><!-- /.navbar-collapse -->-->
+<!--    </div><!-- /.container-fluid -->-->
+<!--  </nav>-->
+<!--  <label class="checkbox-inline">-->
+<!--    <input type="checkbox" id="inlineCheckbox1" name="option" value="false"> 24시간-->
+<!--  </label>-->
+<!--  <label class="checkbox-inline">-->
+<!--    <input type="checkbox" id="inlineCheckbox2" name="option" value="false"> 콘센트 많은가?-->
+<!--  </label>-->
+<!--</div>-->
+<!--<hr>-->
+<!--<div id="section" value="hidden">-->
   
-</div>
+<!--</div>-->
+
+<!--<input class="btn btn-default" id ="like_btn" type="button" value="Like">-->
+
+<!--<div id ="section">-->
+  
+<!--</div>-->
 
 
   <script type="text/javascript">
@@ -69,23 +447,16 @@
           location.href='/users/sign_in';
       });
           
-      $("#search_btn").click(function(){
-        $.ajax({
-          method: "POST",
-          url: "/home/search",
-          data: { overnight: $("#inlineCheckbox1").val() ,
-                  outlet: $("#inlineCheckbox2").val()},
-          success: function(data){
-            for(i=0; i<data.cafes.length; i++){
-              $("#section").append("<p>" + data.cafes[i].name + "</p><br>");
-              $("#section").append("<p>" + data.cafes[i].open_time + "</p><br>");
-              $("#section").append("<p>" + data.cafes[i].close_time + "</p><br>");
-              $("#section").append("<p>" + data.cafes[i].lat + "</p><br>");
-              $("#section").append("<p>" + data.cafes[i].lng + "</p><br>");
-            }
-          } 
-        });
-      });
+    //   $("#search_btn").click(function(){
+    //     $.ajax({
+    //       method: "POST",
+    //       url: "/home/search",
+    //       data: { search_bar: $("#s").val() },
+    //       success: function(data){
+             
+    //         }
+    //     });
+    //   });
     });
     
       $("#like_btn").click(function(){ //like 버튼 => 로그인이 됬을 때만 실행 가능

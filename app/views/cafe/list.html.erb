@@ -1,0 +1,92 @@
+
+    <!-- Header
+	============================================= -->
+    <section class="main-header">
+
+       <div class="main_nav">
+           <h1 class="main_logo">
+             <a href="#" title="wanducong" class="sprite logo_link"></a>
+           </h1>
+           
+           <section id="search">
+                <div class="container">
+                    <div class="nav-search col-md-10">
+                        <form role="search" class="navsearch-form" action="#" method="get">
+                            <input class="navsearch-field col-md-10" type="text" name="s" id="s" placeholder=" ex : 홍대카페"
+                      required>
+                            <button class="navbtn navsearch-btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+           </section>
+           
+       <!-- 로그인 / 회원 가입 / 회원 정보 부분 -->
+           <div class="main_menu">
+             <!--<a href="#" class="login_link">로그인</a>-->
+               &nbsp;
+             <a href="#" class="login_link">이OO님 안녕하세요!</a>
+           </div>
+         </div>
+        
+        
+    </section>
+        
+    <!--==============지역별 카페 모아보기 =======================-->
+    <div class="container " >
+        <div class="row col-md-12 ">
+            <div style="font-weight: bold; font-size:50px; line-height: 2em; text-align: center; margin-top : 100px;" >
+                <h1><%=@place.name %></h1>    
+            </div>
+            <div style= "font-size: 30px;line-height: 1.5em;  text-align: center;">
+               <h1><%=@place.comment %></h1>
+            </div>
+            <div style= "font-size:22px; line-height: 1.5em; padding-bottom:50px; text-align: center;">
+                <h1>요즘 핫한 <%=@place.name %> 카페</h1>  
+            </div>
+            <% @cafe_list.each do |list| %>
+         
+            <div id="image" class="image22">
+                <div class="hot-cafe" style="background-image: url(/assets/cafe/romont02.jpg) ">
+                    <div class="text" style="margin-left:30px;">
+                        <div style= "font-size:35px; position:absolute; padding-bottom: 15px; bottom:60px; color:white;">
+                            <p> <%=list.name%>
+                                <img src="/assets/before_images/consent_hover.png" style="width: 100%; max-width:35px;"/>
+                                <img src="/assets/before_images/dessert_hover.png" style="width: 100%; max-width:35px;"/>
+                            </p>  
+                        </div>
+                        <div style= "font-size:18px; position:absolute; padding-bottom:10px; bottom:10px; color:white; margin-right:30px; ">
+                            <p><%=list.comment%></p>
+                        </div>  
+                    </div>
+                        
+                    <div style="position: absolute; bottom:65px; padding-bottom: 50px; width:600px; border-bottom:1.5px solid white; "></div>
+                </div>
+            </div>
+            <% end %>
+                        
+            <!--<div id="image" class="image22">-->
+            <!--    <div class="hot-cafe" style="background-image: url(assets/img/cafe/cafe08.png) ">-->
+            <!--        <div class="text" style="margin-left: 30px;">-->
+            <!--            <div style= "font-size:35px; position:absolute; padding-bottom: 15px; bottom:60px; color:white;">-->
+            <!--                 <p>그린 클라우드 커피-->
+            <!--                    <img src="assets/img/before_images/consent_hover.png" style="width: 100%; max-width:35px;"/>-->
+            <!--                    <img src="assets/img/before_images/plus_hover.png" style="width: 100%; max-width:35px;"/>-->
+            <!--                </p>-->
+            <!--            </div>-->
+            <!--            <div style= "font-size:18px; position:absolute; padding-bottom:10px; bottom:10px; color:white; margin-right:30px; ">-->
+            <!--                <p>넓고 테이블이 많은 2층 카페. 단체로 앉을 수 있는 넓은 테이블도 많아서 팀플이나 스터디 하기에 좋다. 다만 콘센트가 넉넉하지는 않다.</p>-->
+            <!--            </div>-->
+            <!--        </div>-->
+                        
+            <!--        <div style="position: absolute; bottom:65px; padding-bottom: 50px; width:600px; border-bottom:1.5px solid white; "></div>-->
+            <!--    </div>-->
+            <!--</div>  -->
+        </div>        
+    </div>
+
+
+
+    
+ 
+    
+    

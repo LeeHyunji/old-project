@@ -11,25 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827071841) do
+ActiveRecord::Schema.define(version: 20160829140131) do
+
+  create_table "cafe_images", force: :cascade do |t|
+    t.string   "image_url"
+    t.integer  "cafe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "caves", force: :cascade do |t|
     t.string   "name"
     t.string   "region"
     t.string   "open_time"
-    t.string   "close_time"
-    t.boolean  "overnight",   default: false
-    t.boolean  "outlet",      default: false
+    t.string   "phone"
+    t.string   "price"
+    t.string   "address"
+    t.integer  "outlet_count"
+    t.integer  "wifi_count"
+    t.boolean  "outlet",       default: false
+    t.boolean  "wifi",         default: false
+    t.boolean  "quiet",        default: false
+    t.boolean  "etc",          default: false
+    t.boolean  "dessert",      default: false
+    t.string   "comment"
     t.integer  "scrap_count"
     t.float    "lat"
     t.float    "lng"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "place_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "cafe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
