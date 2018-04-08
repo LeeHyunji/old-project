@@ -4,12 +4,6 @@
 
 ## 팀소개 및 페이지를 꾸며주세요.
 
-- readme.md 수정.
-
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
-
 **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-26
 
 
@@ -25,8 +19,11 @@
 프로젝트 소개하는 영상을 추가하세요
 
 ## 3. 팀 소개
-
-20143097 이현지
+![kakaotalk_20180326_195208104](https://user-images.githubusercontent.com/12287842/38469081-f158b27c-3b89-11e8-8b28-8e4757fefd0c.jpg)
+### 이현지(Hyunji Lee)
+▶ 20143097
+▶ email : hyunji015@kookmin.ac.kr
+▶ role : DB design & Algorithmus design
 
 ## 4. 사용법
 
