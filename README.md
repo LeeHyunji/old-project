@@ -19,7 +19,7 @@
 프로젝트 소개하는 영상을 추가하세요
 
 ## 3. 팀 소개
-![kakaotalk_20180326_195208104](https://user-images.githubusercontent.com/12287842/38469081-f158b27c-3b89-11e8-8b28-8e4757fefd0c.jpg)
+<img src="https://user-images.githubusercontent.com/12287842/38469165-54c8bbf8-3b8b-11e8-9299-d4190c46332d.jpg" width="40%">
 ### 이현지(Hyunji Lee)
 ▶ 20143097
 ▶ email : hyunji015@kookmin.ac.kr
