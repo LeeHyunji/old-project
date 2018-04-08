@@ -1,4 +1,5 @@
-## **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-26
+### **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-26
+<br>
 
 
 ## 1. 프로잭트 소개
@@ -23,7 +24,7 @@
 <img src="https://user-images.githubusercontent.com/12287842/38469165-54c8bbf8-3b8b-11e8-9299-d4190c46332d.jpg" width="40%">
 <br>
 
-### 뷰티케어플랫폼을 위한 DB설계와 추천알고리즘구현
+### 이현지(Hyunji Lee)
 
 ▶ 20143097 <br>
 ▶ email : hyunji015@kookmin.ac.kr <br>
