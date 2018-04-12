@@ -33,6 +33,6 @@
 
 ## 4. Introduction and Project Goals
 
-The " Zero Pounders " company is a beauty technology company that provides a service through IT technology to the various beauty needs of consumers, starting with hardware rather than software. Beauty Care is provided to consumers by allowing them to freely self-diagnose through hardware that measures the oil content of their skin and diagnoses immediately.
+The " Zerofounders " company is a beauty technology company that provides a service through IT technology to the various beauty needs of consumers, starting with hardware rather than software. Beauty Care is provided to consumers by allowing them to freely self-diagnose through hardware that measures the oil content of their skin and diagnoses immediately.
 During the internship many beauty-related studies have concluded that the essence of beauty care is care for each product that is suitable for each individual consumer product rather than separate product and care. We have planned the various elements considered to match each product with individual users, and we have planned the direction in which each element affects the recommendation. The results show that the recommended product rankings are the same as the products you experience after using the actual product. 
 With the aim of matching products to users based on these results, we use this capston to implement recommended algorithms based on product, user, and data design and data later on the product.
