@@ -14,7 +14,6 @@
 
 ## 2. 소개 영상
 
-프로젝트 소개하는 영상을 추가하세요
 [![Video Label](http://img.youtube.com/vi/T35-krjnBb4/0.jpg)](https://youtu.be/T35-krjnBb4)
 <br>
 <br>
