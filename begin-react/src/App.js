@@ -18,7 +18,8 @@ function App() {
         >
           Learn React
         </a>
-        <Hello />
+        <Hello name="hyunji" color="blue"/>
+        <Hello color="green"/>
       </header>
     </div>
   );
