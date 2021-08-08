@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import Hello from './hello.js';
+import Wrapper from './Wrapper';
 import './App.css';
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
         >
           Learn React
         </a>
-        <Hello name="hyunji" color="blue"/>
-        <Hello color="green"/>
+        <Wrapper>
+          <Hello name="hyunji" color="blue"/>
+          <Hello color="green"/>
+        </Wrapper>
       </header>
     </div>
   );
