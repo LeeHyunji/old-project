@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
         <Wrapper>
-          <Hello name="hyunji" color="blue"/>
+          <Hello name="hyunji" color="blue" isSpecial/>
           <Hello color="green"/>
         </Wrapper>
       </header>
