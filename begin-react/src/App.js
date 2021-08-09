@@ -19,6 +19,11 @@ function App(){
       [name] : value
     });
   };
+  const onRemove = id =>{
+    //배열의 불변성을 위해서 삭제된 새로운 배열을 생성해야한다.
+    //filter는 배열에서 특정 조건을 만족하는 것으로 새로운 배열을 생성하는 메소드
+    setUsers(users.filter(user=> user.id !== id));
+  };
 
   const [users, setUsers] = useState([
       {
@@ -59,7 +64,7 @@ function App(){
   return (
     <>
       <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
-      <UserList users={users}></UserList>
+      <UserList users={users} onRemove={onRemove}></UserList>
     </>
   );
 }
