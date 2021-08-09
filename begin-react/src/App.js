@@ -29,17 +29,20 @@ function App(){
       {
           id : 1,
           username : "hyunji",
-          email : "hyunji015@gmail.com"
+          email : "hyunji015@gmail.com",
+          active : true
       },
       {
           id : 2,
           username : "tester",
-          email : "tester@gmail.com"
+          email : "tester@gmail.com",
+          active :false
       },
       {
           id : 3,
           username : "tester2",
-          email : "tester2@gmail.com"
+          email : "tester2@gmail.com",
+          active:false
       }
   ]);
 
@@ -61,10 +64,18 @@ function App(){
     nextId.current +=1;
     //값이 바뀐다고 컴포넌트가 리렌더링 되지는 않는다!
   };
+
+  const onToggle = id =>{
+    setUsers(users.map(
+      user=> user.id === id 
+      ? {...user, active:!user.active} 
+      : user
+    ));
+  }
   return (
     <>
       <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
-      <UserList users={users} onRemove={onRemove}></UserList>
+      <UserList users={users} onRemove={onRemove}  onToggle={onToggle}></UserList>
     </>
   );
 }
