@@ -7,22 +7,18 @@ function User({user, onRemove, onToggle}){
 
     //userEffect( 함수, deps)
     // deps는 의존되는 값을 넣은것으로, 없으면 컴포넌트가 처음 나타날때만 실행.
-    // 
+    // deps 값이 있을때,
+    // 값이 설정되거나 바뀔때마다 호출이 된다. (마운트될때, props가 변할때, 언마운트될때)
     useEffect(()=>{
-        // 컴포넌트가 마운트 될때 (이미 UI가 나타난 이후, 바로 Dom 접근 가능)
-        // props -> state
-        // REST API
-        // D3 Video.js
-        // SetInterval, setTimeout
-        console.log('컴포넌트가 화면에 나타남');
-
+        console.log('user 값이 설정됨')
+        console.log(user);
         return ()=>{
-            // 컴포넌트가 언마운트 될때 return
-            // setInterval, setTimeout 작업을 clear 할때 clearInterval, clearTimeout
-            // 라이브러리 인스턴스 제거
-            console.log('화면에서 사라짐');
+            //cleanup 함수 : useEffect에 대한 뒷정리
+            //DOM이 바뀌기 직전에도 적용, 사라질때도 적용.
+            console.log('user 값이 바뀌기전')
+            console.log(user);
         }
-    },[]);
+    },[user]);
 
 
     return(
