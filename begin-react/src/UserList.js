@@ -1,9 +1,30 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 
 
 function User({user, onRemove, onToggle}){
     const {username, email, id,active} = user;
+
+    //userEffect( 함수, deps)
+    // deps는 의존되는 값을 넣은것으로, 없으면 컴포넌트가 처음 나타날때만 실행.
+    // 
+    useEffect(()=>{
+        // 컴포넌트가 마운트 될때 (이미 UI가 나타난 이후, 바로 Dom 접근 가능)
+        // props -> state
+        // REST API
+        // D3 Video.js
+        // SetInterval, setTimeout
+        console.log('컴포넌트가 화면에 나타남');
+
+        return ()=>{
+            // 컴포넌트가 언마운트 될때 return
+            // setInterval, setTimeout 작업을 clear 할때 clearInterval, clearTimeout
+            // 라이브러리 인스턴스 제거
+            console.log('화면에서 사라짐');
+        }
+    },[]);
+
+
     return(
         <div>
             <b style={{
