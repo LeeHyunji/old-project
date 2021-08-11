@@ -1,8 +1,14 @@
 import logo from './logo.svg';
-import React,{useRef, useState} from 'react';
+import React,{useRef, useState, useMemo} from 'react';
 import UserList from './UserList';
 import CreateUser from './CreateUser';
 import './App.css';
+
+
+function countActiveUser(users){
+  console.log("활성 사용자 세는 중 ..");
+  return users.filter(user=>user.active).length;
+}
 
 function App(){
   const [inputs, setInputs] = useState({
@@ -72,8 +78,13 @@ function App(){
       : user
     ));
   }
+
+  //useMemo( 함수, deps)
+  //렌더링 중이어도, deps가 변경될때만  해당 함수를 처리할수 있도록 성능 최적화
+  const count = useMemo(()=>countActiveUser(users), [users]);
   return (
     <>
+      <div>활성 사용자 수 : {count}</div>
       <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
       <UserList users={users} onRemove={onRemove}  onToggle={onToggle}></UserList>
     </>
