@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import CounterReducer from './CounterReducer';
+// import App from './App';
+import App from './AppReducer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CounterReducer />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
