@@ -58,7 +58,7 @@ function App(){
     }
     // push나 splice 사용하면 안됨, 배열의 불변성을 지켜줘야함.
     // setUsers([...users,user]); //배열에 값을 추가하는 방법 1. 배열 spread로 복사 후 추가 
-    setUsers(users.concat(user)); // 배열에 값을 추가하는 방법 2. concat으로 기존배열과 신규배열 합침
+    setUsers(users => users.concat(user)); // 배열에 값을 추가하는 방법 2. concat으로 기존배열과 신규배열 합침
     setInputs({
       username:"",
       email:"",
@@ -66,21 +66,21 @@ function App(){
     console.log(nextId.current);
     nextId.current +=1;
     //값이 바뀐다고 컴포넌트가 리렌더링 되지는 않는다!
-  },[username,email,users]);
+  },[username,email,]);
 
   const onRemove = useCallback((id) =>{
     //배열의 불변성을 위해서 삭제된 새로운 배열을 생성해야한다.
     //filter는 배열에서 특정 조건을 만족하는 것으로 새로운 배열을 생성하는 메소드
-    setUsers(users.filter(user=> user.id !== id));
-  }, [users]);
+    setUsers(users => users.filter(user=> user.id !== id));
+  }, []);
   
   const onToggle = useCallback(id =>{
-    setUsers(users.map(
+    setUsers(users =>  users.map(
       user=> user.id === id 
       ? {...user, active:!user.active} 
       : user
     ));
-  },[users]);
+  },[]);
 
   //useMemo( 함수, deps)
   //렌더링 중이어도, deps가 변경될때만  해당 함수를 처리할수 있도록 성능 최적화
