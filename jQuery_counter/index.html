@@ -13,25 +13,48 @@
         .wrap{
             margin: 1rem;
         }
+        .input_box{
+            display: flex;
+            height: 35px;
+            justify-content: center; /*item들을 flex 가운데에*/
+            align-items: stretch;
+        }
+        .input_box #quantity{
+            width: 70px;
+            text-align: center;
+            border: none;
+            border-bottom: solid 1px #838383;
+            border-top: solid 1px #838383;
+        }
+        .input_box #quantity:focus{
+            outline: 0;
+        }
+        .input_box .btn{
+            cursor: pointer;
+            width: 35px;
+            border-radius: 0;
+            border : solid 1px #838383
+        }
     </style>
 </head>
 <body>
     <div class="wrap">
-        <div class="box">
-            <h1>0</h1>
+        <div class="input_box">
             <button class="btn btn_decrease">-</button>
+            <input type="text" id="quantity" name="quantity" value="0">
             <button class="btn btn_increase">+</button>
         </div>
     </div>
     <script>
-        $("document").ready(function(){
+        $("documnet").ready(function(){
             $(".btn_increase").on("click",function(){
-                let num = Number($("h1").text());
-                $("h1").text(num+1);
+                console.log("hi");
+                let num = Number($("#quantity").val());
+                $("#quantity").val(num+1);
             });
             $(".btn_decrease").on("click",function(){
-                let num = parseInt($("h1").text());
-                $("h1").text(num-1);
+                let num = parseInt($("#quantity").val());
+                $("#quantity").val(num-1);
             });
         });
     </script>
