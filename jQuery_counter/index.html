@@ -50,23 +50,29 @@
             $(".btn_increase").on("click",function(){
                 console.log("hi");
                 let num = Number($("#quantity").val());
-                $("#quantity").val(num+1);
+                $("#quantity").val(check_num(num+1));
             });
             $(".btn_decrease").on("click",function(){
                 let num = parseInt($("#quantity").val());
-                $("#quantity").val(check_min_num(num-1));
+                $("#quantity").val(check_num(num-1));
             });
             $("#quantity").on("change",function(){
                 let num = $(this).val();
-                $("#quantity").val(check_min_num(num));
+                $("#quantity").val(check_num(num));
             });
         });
 
+        const MAX_NUM = 5;
+        const MIN_NUM = 1;
+
         //제로미만인지 체크
-        function check_min_num(num){
-            if(num<0){
-                alert("0 미만으로 설정할수 없습니다.");
-                num = 0;
+        function check_num(num){
+            if(num<MIN_NUM){
+                alert(MIN_NUM+" 미만으로 설정할 수 없습니다.");
+                num = MIN_NUM;
+            }else if(num>MAX_NUM){
+                alert(MAX_NUM+' 초과로 설정할 수 없습니다.')
+                num = MAX_NUM;
             }
             return num;
         }
