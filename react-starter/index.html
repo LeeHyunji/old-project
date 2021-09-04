@@ -23,17 +23,25 @@
         
         // react 컴포넌트를 사용할때는 기존 태그와 헷갈리지 않게 uppercase letter로 사용하기
         // 인자는 props로 전달 받기
-        const Paint = ({title,description}) => (
+        const Paint = ({title,description,children}) => (
             <>
                 <h1>{title}</h1>
                 <h2>{description}</h2>
+                {children}
             </>
         );
+        const Great = () => <h6>Great!</h6>;
         const element = (
             <>
-               <Paint title="hi" description="hello"/>
-               <Paint title="Good" description="good"/>
-               <Paint title="Bad" description="bad"/>
+                <Paint title="hi" description="hello">
+                    <span>Hello, World!</span>
+                    <Paint title="Good" description="good"/>
+                    <Paint title="Bad" description="bad"/>
+                    <Great/>
+                    <Great/>
+                    <Great/>
+                </Paint>
+                
             </>
         );
         ReactDOM.render(element, rootElement);
