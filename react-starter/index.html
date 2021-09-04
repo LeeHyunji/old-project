@@ -7,15 +7,29 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
+        // const element = (
+        //     <frameElement children=
+        //     {[
+        //         <h1>Hi</h1>,
+        //         <h2>Hi2</h2>,
+        //         <h3>Hi3</h3>
+        //     ]}
+        //     />
+        // );
+        // const element = (
+        //     <React.Fragment>
+        //         <h1>Hi</h1>
+        //         <h2>Hi2</h2>
+        //         <h3>Hi3</h3>
+        //     </React.Fragment>
+        // )
         const element = (
-            <div className="box" children=
-            {[
-                React.createElement("h1",null,"Hi"),
-                React.createElement("h2",null,"Hi2"),
-                React.createElement("h3",null,"Hi3")
-            ]}
-            />
-        );
+            <>
+                <h1>Hi</h1>
+                <h2>Hi2</h2>
+                <h3>Hi3</h3>
+            </>
+        )
         ReactDOM.render(element, rootElement);
     </script>
 </body>
