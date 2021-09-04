@@ -7,11 +7,15 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        const text = "Hello, World!!"
-        const titleClasName = "title";
-        const props = {className :titleClasName, children : text};
-        const customH1 = <h1 {...props} />;
-        const element = customH1
+        const element = (
+            <div className="box" children=
+            {[
+                React.createElement("h1",null,"Hi"),
+                React.createElement("h2",null,"Hi2"),
+                React.createElement("h3",null,"Hi3")
+            ]}
+            />
+        );
         ReactDOM.render(element, rootElement);
     </script>
 </body>
