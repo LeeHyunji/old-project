@@ -9,7 +9,8 @@
         const rootElement = document.getElementById("root");
         const text = "Hello, World!!"
         const titleClasName = "title";
-        const customH1 = <h1 className={titleClasName}>{text}</h1>;
+        const props = {className :titleClasName, children : text};
+        const customH1 = <h1 {...props} />;
         const element = customH1
         ReactDOM.render(element, rootElement);
     </script>
