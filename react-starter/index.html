@@ -7,43 +7,28 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        // const paint = (title,description) => (
-        //     <>
-        //         <h1>{title}</h1>
-        //         <h2>{description}</h2>
-        //     </>
-        // );
-        // const element = (
-        //     <>
-        //         {paint("hi","hello")}
-        //         {paint("Good","good")}
-        //         {paint("Bad","bad")}
-        //     </>
-        // );
-        
-        // react 컴포넌트를 사용할때는 기존 태그와 헷갈리지 않게 uppercase letter로 사용하기
-        // 인자는 props로 전달 받기
-        const Paint = ({title,description,children}) => (
-            <>
-                <h1>{title}</h1>
-                <h2>{description}</h2>
-                {children}
-            </>
-        );
-        const Great = () => <h6>Great!</h6>;
+      
+        const Text = ({text})=>{
+            // return (
+            //     <>
+            //         <h1>{text}</h1>
+            //         <h3>{text}</h3>
+            //     </>
+            // )
+            if(text.charAt(0)===text.charAt(0).toUpperCase()){
+                return <h1>{text}</h1>;
+            }else{
+                return <h3>{text}</h3>;
+            }
+
+        }
+
         const element = (
             <>
-                <Paint title="hi" description="hello">
-                    <span>Hello, World!</span>
-                    <Paint title="Good" description="good"/>
-                    <Paint title="Bad" description="bad"/>
-                    <Great/>
-                    <Great/>
-                    <Great/>
-                </Paint>
-                
+                <Text text="Hi" />
+                <Text text="hi" />
             </>
-        );
+        )
         ReactDOM.render(element, rootElement);
     </script>
 </body>
