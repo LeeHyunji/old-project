@@ -7,29 +7,35 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        // const element = (
-        //     <frameElement children=
-        //     {[
-        //         <h1>Hi</h1>,
-        //         <h2>Hi2</h2>,
-        //         <h3>Hi3</h3>
-        //     ]}
-        //     />
+        // const paint = (title,description) => (
+        //     <>
+        //         <h1>{title}</h1>
+        //         <h2>{description}</h2>
+        //     </>
         // );
         // const element = (
-        //     <React.Fragment>
-        //         <h1>Hi</h1>
-        //         <h2>Hi2</h2>
-        //         <h3>Hi3</h3>
-        //     </React.Fragment>
-        // )
+        //     <>
+        //         {paint("hi","hello")}
+        //         {paint("Good","good")}
+        //         {paint("Bad","bad")}
+        //     </>
+        // );
+        
+        // react 컴포넌트를 사용할때는 기존 태그와 헷갈리지 않게 uppercase letter로 사용하기
+        // 인자는 props로 전달 받기
+        const Paint = ({title,description}) => (
+            <>
+                <h1>{title}</h1>
+                <h2>{description}</h2>
+            </>
+        );
         const element = (
             <>
-                <h1>Hi</h1>
-                <h2>Hi2</h2>
-                <h3>Hi3</h3>
+               <Paint title="hi" description="hello"/>
+               <Paint title="Good" description="good"/>
+               <Paint title="Bad" description="bad"/>
             </>
-        )
+        );
         ReactDOM.render(element, rootElement);
     </script>
 </body>
