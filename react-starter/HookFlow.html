@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+        const rootElement = document.getElementById("root");
+
+        const App = () =>{
+            console.log("APP render start");
+            const [show, setShow] = React.useState(()=>{
+                console.log("APP useState");
+                return false;
+            });
+
+            // render가 끝난 다음에 useEffect가 진행된다!
+            React.useEffect(()=>{
+                console.log("APP useEffect, no deps");
+            });
+            React.useEffect(()=>{
+                console.log("APP useEffect, empty deps");
+            },[]);
+            React.useEffect(()=>{
+                console.log("APP useEffect, [show] deps");
+            },[show]);
+
+            function handleClick(){
+                //useState는 이전값을 prev 로 받을 수 있다. 
+                setShow(prev => !prev);
+            };
+
+            console.log("APP render end");
+            return (
+                <>
+                    <button onClick={handleClick}>Search</button>
+                    {show ? (
+                       <Child />
+                    ) : null}
+                    
+                </>
+            )
+        }
+        ReactDOM.render(<App />,rootElement);
+    </script>
+</body>
+</html>
