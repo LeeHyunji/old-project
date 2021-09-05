@@ -7,24 +7,22 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        const App = () =>{
-            //윈도우 localStorage(I/O)를 도달했다가 useState로 꺼내와야하기 때문에 딜레이가 생길 수 있다.
-            const [keyword, setKeyword] = React.useState(
-                //useState 안에 함수로 값을 넣을 수 있다.
-                // 초기 값을 함수로 넣으면, 딜레이가 되더라도 함수가 실행하면 늦게다로 받아올 수 있다.
-                ()=>window.localStorage.getItem("keyword")
-            );
-            const [typing, setTyping] = React.useState(false);
-            const [result, setResult] = React.useState("");
-
-            //값을 변경할때마다 전체 함수가 계속 실행 -> 불필요할때도 계속 실행된다.
-            // window.localStorage.setItem("keyword", keyword);
-            // useEffet()를 통해서 필요할때만 실행할 수 있다.
+        //Custom Hook 만들기 : 여러개의 컴포넌트의 useState와 useEffect를 동시에 관리하기
+        function useLocalStorage(itemName, value=""){
+            const [state, setState] = React.useState(()=>{
+                window.localStorage.getItem(itemName) || value;
+            });
             React.useEffect(()=>{
-                window.localStorage.setItem("keyword", keyword);
-            },[keyword]);
+                window.localStorage.setItem(itemName, state);
+            },[state]);
 
+            return [state,setState];
+        }
 
+        const App = () =>{
+            const [keyword, setKeyword] = useLocalStorage("keyword");
+            const [typing, setTyping] = useLocalStorage("typing");
+            const [result, setResult] = useLocalStorage("result",false);
 
             function handleChange(event){
                 setKeyword(event.target.value);
