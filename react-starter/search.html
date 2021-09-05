@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+        const rootElement = document.getElementById("root");
+
+        const state = {keyword : "", typing : false, result : ""};
+
+        const App = () =>{
+            function handleChange(){
+                setState({
+                    typing : true,
+                    keyword : event.target.value});
+            }
+            function handleClick(){
+                setState({
+                    typing:false,
+                    result : `we find result of ${state.keyword}`
+                })
+            }
+            function setState(newState){
+                //기존 Object에 새로운 Object의 변경된 부분만 수정하는 것
+                Object.assign(state,newState);
+                render();
+            }
+            
+            return (
+                <>
+                    <input onChange={handleChange}/>
+                    <button onClick={handleClick}>search</button>
+                    <p>
+                        {state.typing ? `Looking for ${state.keyword}...` : state.result}
+                    </p>
+                </>
+            
+            );
+        };
+
+        function render(){
+            ReactDOM.render(<App />,rootElement);
+        }
+        render();
+    </script>
+</body>
+</html>
