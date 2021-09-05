@@ -8,10 +8,24 @@
     <script type="text/babel">
         const rootElement = document.getElementById("root");
         const App = () =>{
-
-            const [keyword, setKeyword] = React.useState("");
+            //윈도우 localStorage(I/O)를 도달했다가 useState로 꺼내와야하기 때문에 딜레이가 생길 수 있다.
+            const [keyword, setKeyword] = React.useState(
+                //useState 안에 함수로 값을 넣을 수 있다.
+                // 초기 값을 함수로 넣으면, 딜레이가 되더라도 함수가 실행하면 늦게다로 받아올 수 있다.
+                ()=>window.localStorage.getItem("keyword")
+            );
             const [typing, setTyping] = React.useState(false);
             const [result, setResult] = React.useState("");
+
+            //값을 변경할때마다 전체 함수가 계속 실행 -> 불필요할때도 계속 실행된다.
+            // window.localStorage.setItem("keyword", keyword);
+            // useEffet()를 통해서 필요할때만 실행할 수 있다.
+            React.useEffect(()=>{
+                window.localStorage.setItem("keyword", keyword);
+            },[keyword]);
+
+
+
             function handleChange(event){
                 setKeyword(event.target.value);
                 setTyping(true);
@@ -23,7 +37,7 @@
             
             return (
                 <>
-                    <input onChange={handleChange}/>
+                    <input onChange={handleChange} value={keyword}/>
                     <button onClick={handleClick}>search</button>
                     <p>
                         {typing ? `Looking for ${keyword} ... ` : result}
