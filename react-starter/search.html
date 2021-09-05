@@ -7,25 +7,18 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-
-        const state = {keyword : "", typing : false, result : ""};
-
         const App = () =>{
-            function handleChange(){
-                setState({
-                    typing : true,
-                    keyword : event.target.value});
+
+            const [keyword, setKeyword] = React.useState("");
+            const [typing, setTyping] = React.useState(false);
+            const [result, setResult] = React.useState("");
+            function handleChange(event){
+                setKeyword(event.target.value);
+                setTyping(true);
             }
             function handleClick(){
-                setState({
-                    typing:false,
-                    result : `we find result of ${state.keyword}`
-                })
-            }
-            function setState(newState){
-                //기존 Object에 새로운 Object의 변경된 부분만 수정하는 것
-                Object.assign(state,newState);
-                render();
+                setTyping(false);
+                setResult(`We find result of ${keyword}`);
             }
             
             return (
@@ -33,17 +26,13 @@
                     <input onChange={handleChange}/>
                     <button onClick={handleClick}>search</button>
                     <p>
-                        {state.typing ? `Looking for ${state.keyword}...` : state.result}
+                        {typing ? `Looking for ${keyword} ... ` : result}
                     </p>
                 </>
-            
             );
         };
 
-        function render(){
-            ReactDOM.render(<App />,rootElement);
-        }
-        render();
+        ReactDOM.render(<App />,rootElement);
     </script>
 </body>
 </html>
