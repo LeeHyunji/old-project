@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+        const rootElement = document.getElementById("root");
+        //Custom Hook 만들기 : 여러개의 컴포넌트의 useState와 useEffect를 동시에 관리하기
+        function useLocalStorage(itemName, value=""){
+            const [state, setState] = React.useState(()=>{
+                window.localStorage.getItem(itemName) || value;
+            });
+            React.useEffect(()=>{
+                window.localStorage.setItem(itemName, state);
+            },[state]);
+
+            return [state,setState];
+        }
+
+        const App = () =>{
+            const [keyword, setKeyword] = useLocalStorage("keyword");
+            const [typing, setTyping] = useLocalStorage("typing");
+            const [result, setResult] = useLocalStorage("result",false);
+
+            function handleChange(event){
+                setKeyword(event.target.value);
+                setTyping(true);
+            }
+            function handleClick(){
+                setTyping(false);
+                setResult(`We find result of ${keyword}`);
+            }
+            
+            return (
+                <>
+                    <input onChange={handleChange} value={keyword}/>
+                    <button onClick={handleClick}>search</button>
+                    <p>
+                        {typing ? `Looking for ${keyword} ... ` : result}
+                    </p>
+                </>
+            );
+        };
+
+        ReactDOM.render(<App />,rootElement);
+    </script>
+</body>
+</html>
