@@ -1,0 +1,2412 @@
+* {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+strong{
+    color: #f0885d;
+}
+b{
+    font-weight: 700;
+}
+
+
+/* ************************************************************* */
+/* header                                                        */
+/* ************************************************************* */
+/* 고정 header */
+.header-v8{
+    padding:1rem 0;
+}
+.header-content-v8 .logo-v8{
+    margin-right: auto;
+}
+.header-content-v8 .logo-v8 img{
+        height: 3rem;
+}
+.header-content-v8 nav ul li{
+    padding: 0 1.25rem;
+}
+.header-content-v8 nav ul li a{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.header-content-v8 nav ul li:hover>ul {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem
+}
+.header-content-v8 nav ul li>ul li a{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.nav-toggle-btn{
+    margin-left: 5rem !important;
+}
+
+/* responsive menu */
+.responsive-menu .rep-header{
+    padding: 1rem 0;
+}
+.responsive-menu .rep-logo img{
+    height: 3rem;
+}
+.responsive-menu .close-menu{
+    margin-right: 1rem;
+}
+.responsive-menu .search-box{
+    padding: 0.5rem 1rem;
+}
+.responsive-menu .search-box form input{
+    height: 3rem;
+    font-size : 1.25rem;
+}
+.responsive-menu .mobile-menu>li a{
+    font-size: 1.25rem;
+}
+    /* menu-list */
+.responsive-menu .mobile-menu ul{
+    padding: 1rem 2rem 2rem 2rem;
+}
+.responsive-menu .mobile-menu>li a:before{
+    font-size: 2rem !important;
+    font-weight: 400;
+}
+.mobile-menu>li.menu-item-has-children.active>a:before{
+    padding-top:1rem;
+}
+
+
+/* ************************************************************* */
+/* footer                                                        */
+/* ************************************************************* */
+/* 1. 하단 고정바 bottom-bar */
+footer .bottom-bar{
+    position: fixed;
+    z-index: 1000;
+    bottom:0;
+    width:100%;
+    background: #4c3634;
+}
+footer .bottom-bar a{
+    display: block;
+    border-left: solid 2px rgba(255,255,255,.2);
+}
+footer .bottom-bar .row > .col:first{
+    border:0;
+}
+footer .bottom-bar .info-item{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin:auto;
+    padding: 0.5rem 1rem;
+}
+footer .info-item .info-icon{
+    background: transparent;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+footer .info-item .info-icon img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 70%;
+    height: auto;
+    transform: translate(-50%,-50%);
+}
+footer .bottom-bar .info-content p{
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+/* 기본 footer */
+footer .bottom-footer{
+    margin-bottom: 90px;
+    padding: 3rem 0;
+    border-top: solid 1px #ddd;
+}
+
+
+
+
+
+/* 공용 */
+.container-fluid{
+    width: 80%;
+    min-width: 1230px;
+}
+.img-cover{
+    width: 100% !important;
+    height: auto !important;
+    padding-top:100% !important;
+    position: relative !important;
+}
+.img-cover img{
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%,-50%) !important;
+}
+/* color */
+.color_ddd{
+    color: #ddd !important;
+}
+/* button */
+.btn-square{
+    border-radius: 0;
+}
+/* sec  */
+.sec-main,.sec-main-2 {
+    padding: 5rem 0;
+}
+.sec-main .sec-header,.sec-main .sec-header-2{
+    margin: 5rem 0 2rem 0;
+    position: relative;
+}
+.sec-main .sec-header h2{
+    font-size : 3rem;
+    font-weight: 600;
+    line-height: 1.36;
+    text-align: center;
+    white-space: pre-line;
+    color: #020202;
+}
+.sec-main .sec-header h2 b{
+    font-size : 5rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+}
+.sec-main .sec-header-2 h2{
+    font-size : 3rem;
+    font-weight: 600;
+    line-height: 1.36;
+    text-align: center;
+    white-space: pre-line;
+    color: #020202;
+    margin-bottom:0;
+}
+.sec-main .sec-header-2 span.sub-title{
+    display: block;
+    text-align: center;
+    color: #f0885d;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom:0.5rem;
+}
+.sec-main .sec-header-2 p{
+    max-width: 760px;
+    margin:auto;
+    margin-top: 2rem;
+    text-align: center;
+    word-break: keep-all;
+    white-space: pre-line;
+}
+.sec-main .sec-content{
+    padding: 3rem 0;
+}
+
+/* sub-banner */
+.sub-banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 350px;
+    padding: 115px 0 ;
+}
+.sub-banner h2{
+    color: #fff;
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+}
+.sub-banner p{
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+/* table */
+.table-wrap{
+    overflow-x: auto;
+    overflow-y:hidden;
+}
+table.main-table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+table.main-table th, table.main-table td{
+    padding: 2rem 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #020202;
+    white-space: nowrap;
+    min-width: 6rem;
+    vertical-align: middle;
+}
+table.main-table th{
+    font-weight: 500;
+    color: #f0885d;
+    font-size: 1.5rem;
+}
+table.main-table tr:nth-child(2n){
+    background-color: #ececec;
+}
+.table-info{
+    background: transparent;
+    text-align: left;
+    margin-bottom: 5rem;
+}
+/* modal */
+.modal .modal-dialog{
+    max-width: 760px;
+    margin-top: 7rem;
+    border:0;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.3);
+    top:40%;
+    transform: translateY(-50%) !important;
+}
+.modal .modal-dialog .modal-content{
+    border:0;
+}
+.modal .modal-dialog .modal-header{
+    background: #fdfbe9;
+    justify-content: center;
+    color: #020202;
+    font-size: 1.5rem;;
+    padding: 1.25rem 1rem ;
+    font-weight: 600;
+    position: relative;
+    align-items: center;
+    border:0;
+}
+.btn-close {
+    position:absolute;
+    right:1rem;
+    box-sizing: content-box;
+    width: 5px;
+    height: 5px;
+    padding: 0.25em 0.25em;
+    color: #000;
+    background: transparent url("../image/btn-close.svg") center/1em auto no-repeat;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: .5;
+}
+.modal .modal-dialog .modal-body{
+    padding: 2rem 1rem;
+}
+.modal .modal-dialog .launch-info-table{
+    border-top: solid 1px #696b6f;
+    border-bottom:  solid 1px #696b6f;
+}
+.modal .modal-dialog .launch-info-table .launch-info-row{
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #ddd;
+    padding: 1rem 0;
+}
+.modal .modal-dialog .launch-info-table .launch-info-row:last-child{
+    border-bottom: 0;
+}
+.modal .modal-dialog .launch-info-table .launch-info-row .launch-step{
+    width: 25%;
+    flex : 0 0 20%;
+    -ms-flex: 0 0 20%;
+    max-width: 20%;
+    text-align: center;
+    color: #f0885d;
+}
+.modal .modal-dialog h6{
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+.modal .modal-dialog p,.modal .modal-dialog span{
+    font-size: 1rem;
+    line-height: 1.56;
+}
+.modal .modal-dialog .launch-document{
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #020202;
+}
+.modal .modal-dialog .launch-document ol {
+    padding-left: 1rem;
+    margin: 0.5rem 0;
+}
+.modal .modal-dialog .launch-document ol li{
+    list-style: auto;
+    line-height: 1.56;
+
+}
+.modal .modal-dialog .btn-footer{
+    border-radius: 3rem;
+    background: #f0885d;
+    padding: 0.75rem 2rem;
+    border:0;
+    box-shadow: 0 3rem 10rem rgba(0,0,0 ,.2);
+}
+
+
+#productModal .product-item{
+    display: flex;
+    padding: 1rem;
+}
+#productModal .product-item .product_img_cover{
+    width: 200px;
+}
+#productModal .product-info{
+    color: #020202;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+#productModal.modal .modal-dialog h6{
+    margin-bottom: 0.5rem;
+}
+
+
+/* ************************************************************* */
+/* index.html 메인화면                                             */
+/* ************************************************************* */
+/* 1. main-banner : 메인배너 */
+.main-banner:before{
+    position:absolute;
+    content:"";
+    background-color: #fef2d9;
+    width: 100%;
+    height: 550px;
+}
+    /* main-banner slide */
+.main-banner .swiper .swiper-slide{
+    max-width: 70% ;
+    background-color: #fff;
+    border-radius: 2rem;
+    background-image: url("../image/main_slide_01.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding-top: 30%;
+}
+.main-banner .swiper .swiper-slide h2{
+    position: absolute;
+    top:5rem;
+    left: 3rem;
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1.56;
+    display: inline-block;
+    font-weight: 400;
+}
+.main-banner .swiper .swiper-slide h2 span{
+    position: absolute;
+    right:- 6rem;
+    margin-left: 1rem;
+    bottom: -1rem;
+    display: inline-block;
+    background: #f0885d;
+    border-radius: 50%;
+    font-weight: 900;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+.main-banner .swiper .swiper-slide h3 {
+    position:absolute;
+    left: 3rem;
+    bottom:3rem;
+    font-size: 3rem;
+    font-weight: 400;
+    text-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+    color: #fff;
+}
+.main-banner .swiper .swiper-slide h3 span{
+    font-size: 5rem;
+}
+.main-banner .swiper .swiper-slide h3 b{
+    font-weight: 900;
+}
+    /* main-banner swiper.js nav버튼 */
+.main-banner .swiper-button-nav{ 
+    width: 70%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+.main-banner .swiper-button-next, .main-banner .swiper-rtl .swiper-button-prev{
+    right: -60px;
+    color: #b7b6b4;
+}
+.main-banner .swiper-button-prev, .main-banner  .swiper-rtl .swiper-button-next{
+    left: -60px;
+    color: #b7b6b4;
+}
+    /* main-banner swiper.js pagination - bullets타입 */
+.swiper-pagination{
+    position : unset;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+}
+.swiper-pagination .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination .swiper-pagination-custom, .swiper-pagination .swiper-pagination-fraction{
+    width:auto;
+    line-height: 1;
+}
+.swiper-pagination-bullet{
+    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,0.8rem));
+    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,0.8rem));
+    background : #ececec;;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active{
+    border: solid 2px #f0885d;
+    background : #ececec;
+}
+    /* main-banner swiper.js pagination - custom타입 */
+.main-banner .append-buttons{
+    height: 5rem;
+    display : flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin : 1rem auto;
+    width: 100%;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.main-banner .append-buttons span{
+    display: inline-block;
+    width:auto;
+    height: auto;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #696b6f;
+    margin: 0.75rem 1rem !important; 
+    background: transparent;
+    border-radius: 0;
+    border-bottom: solid 1px #696b6f; 
+    transition-duration: 0.2s;
+}
+.main-banner .append-buttons span.swiper-pagination-bullet-active{
+    color: #fff;
+    background-color: #f0885d;
+    border-radius: 2rem;
+    border:0;
+    padding: 0.75rem 2rem; 
+    margin:0 1rem;
+}
+
+/* 2. sec-main-feature: 펫클럽을 선택하면 성공하는 이유  */
+.sec-main-feature{
+    background: url("../image/metal_navy_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sec-main-feature .sec-header h2{
+    margin-bottom: 10rem;
+    color: #dddddd;
+}
+.sec-main.sec-main-feature .sec-header h2::before{
+    content: "";
+    position: absolute;
+    height: 4.5rem;
+    width: 100%;
+    left: 0;
+    top: -1rem;
+    transform: translateY(-100%);
+    background-image: url(../image/success_deco_01.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sec-main.sec-main-feature .sec-header h2::after{
+    content: "";
+    position: absolute;
+    height: 5.5rem;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    background-image: url(../image/success_deco_02.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    /* card  */
+.card-feature{
+    background-color: #fff;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    word-break: keep-all; 
+    word-wrap: break-word;
+    margin-bottom: 2rem;
+}
+.card-feature img{
+    float: left;
+    width: 4rem;
+    height: 4rem;
+    margin: 3rem;
+}
+.card-feature .card-body{
+    padding: 1rem;
+    padding-left: 0;
+}
+.card-feature h5{
+    color: #020202;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.card-feature p{
+    white-space: pre-line;
+    line-height: 1.56;
+    font-size: 1.25rem;
+}
+
+/* 3. sec-main-store: 펫클럽 가맹점 월매출 확인  */
+.sec-main-store .sec-content{
+    position: relative;
+}
+.sec-main-store .sec-content .container-fluid{
+    width: 80%;
+}
+.sec-main-store .sec-content::before{
+    content:"";
+    position:absolute;
+    height: 1000px;
+    top:-5rem;
+    left:0;
+    width: 100%;
+    background-image: url(../image/receipt.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    /* .main-store-swiper  */
+.main-store-swiper{
+    margin-top: 500px;
+    padding: 3rem 0;
+}
+.main-store-swiper .swiper-slide{
+    border : solid 2px #e5c55c;
+    border-radius : 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transform: scale(0.8);
+    text-align: center;
+    padding: 2rem 0 3rem 0;
+    background: #fff;
+    transition: transform 0.4s;
+}
+.main-store-swiper .swiper-horizontal>.swiper-pagination-progressbar, .main-store-swiper .swiper-pagination-progressbar.swiper-pagination-horizontal, .main-store-swiper .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .main-store-swiper .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+    max-width: 60%;
+    margin: 5rem auto 1rem auto;
+    height: 0.5rem;
+}
+.main-store-swiper .swiper-slide img{
+    height: 5rem;
+    width: auto;
+    margin-bottom: 1rem;
+}
+.main-store-swiper .swiper-slide h5{
+    color: #020202;
+    font-size : 2rem;
+    font-weight: 400;
+    white-space: pre-line;
+}
+.main-store-swiper .swiper-slide h6{
+    margin: 3rem auto 1.5rem auto;;
+    background: #f0885d;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: 250px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.main-store-swiper .swiper-slide p{
+    font-size: 1.5rem;
+    line-height: 1.36;
+}
+.main-store-swiper .swiper-slide p.store-price{
+    font-size: 3rem;
+    font-weight: 900;
+    color: #020202;
+}
+.main-store-swiper .swiper-slide.swiper-slide-active{
+    transform: scale(1);
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background: var(--swiper-pagination-color,#f0885d);
+}
+    /* store more-button */
+.sec-main-store .more-button{
+    text-align: center;
+}
+.sec-main-store .btn-store-more{
+    white-space: pre-line;
+    border : solid 2px #f0885d;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    line-height: 1.36;
+    color: #020202;
+}
+.sec-main-store .btn-store-more:hover{
+    color: #fff;
+    background: #f0885d;
+}
+.sec-main-store .btn-store-more:hover strong{
+    color: #fff;
+    transition: all .4s ease-in-out;
+}
+
+ /* 4. sec-main-review: 펫클럽 실제점주 성공 창업 후기  */
+.sec-main-review {
+    background : #ececec;
+}
+    /* .main-store-review  */
+.sec-main-review .main-review-swiper{
+    padding: 0 10%;
+}
+.sec-main-review .swiper-pagination,.sec-franchise-sales .franchise-review .swiper-pagination{
+    margin-top: 2rem;
+}
+.sec-main-review .swiper-pagination-bullet,.sec-franchise-sales .franchise-review .swiper-pagination-bullet{
+     background : #fff;
+}
+.sec-main-review .swiper-pagination-bullet.swiper-pagination-bullet-active,.sec-franchise-sales .franchise-review .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #f0885d;
+}
+    /* review card */
+.card-review{
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.card-review .card-head{
+    background: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-review .card-head .card-head-title{
+    max-width: calc(100% - 7rem);
+    line-height: 1.56;
+}
+.card-review .card-head .store-name{
+    color: #020202;
+    font-size: 1.125rem;
+}
+.card-review h5{
+    margin: 0.5rem 0;
+    color: #020202;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden;
+}
+.card-review .card-head .review-star{
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+.card-review .card-head .review-star p{
+    margin-right: 0.5rem;
+    font-size: 1.125rem;
+}
+.star{
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    background-image: url("../image/review_star.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card-review .card-head-img{
+    background: #efefef;
+    width: 6rem;
+    height: 6rem;
+    flex: 0 0 6rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+.card-review .card-head-img img{
+    width: 100%;
+    height: 100%;
+}
+.card-review .card-body{
+    background : #f0885d;
+    padding: 2rem;
+}
+.card-review .card-body h6{
+    color : #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.56;
+    margin-bottom: 1.5rem;
+}
+.card-review .card-body p{
+    color : #fff;
+    font-size: 1.25rem;
+    line-height: 1.56;
+    word-break: keep-all;
+    white-space: pre-line;
+
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+     /* review-card more-button */
+.card-review .card-body .more-button{
+    text-align: center;
+    margin-top: 2rem;
+}
+.card-review .card-body .btn-review-more{
+    color: #fef2d9;
+    border-bottom: solid 1px #fef2d9;
+    font-weight: 600;
+    padding-bottom: 0.25rem;
+}
+
+/* 4. sec-main-hotkeyword: 예비 점주가 궁금한 핫 키워드 바로가기   */
+.sec-main-hotkeywords{
+    height: calc(100vh - 3rem);
+    background-image: url(../image/bottom_bg.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sec-main-hotkeywords .sec-header h2{
+    text-align: left;
+    padding-left: 1rem;
+}
+.sec-main-hotkeywords .keywords-list{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+}
+.sec-main-hotkeywords .keywords-list > li{
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+    width: 50%;
+}
+.sec-main-hotkeywords .keywords-list > li > a{
+    display: inline-block;
+    border : solid 4px #f0885d;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    color: #020202;
+    width: 100%;
+    background: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+
+
+
+/* ************************************************************* */
+/* about.html 펫클럽소개                                            */
+/* ************************************************************* */
+/* 1. about-banner : about.html 배너 */
+.about-banner .featured-post-sec .featured-post{
+    background-color: #fde1a4;
+    margin-bottom: 0;
+    width: calc(100% - 2rem);
+    margin: auto;
+    max-width: 1400px;
+}
+.about-banner .featured-post-sec .featured-post .vector-img{
+    height: 350px;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.about-banner .featured-post-sec .featured-post .vector-img img{
+    height: 100%;
+    object-fit: cover;
+}
+/* 2. sec-about-mission: 대표 인사말 */
+.sec-about-mission.misson-section-v8 .mission-sec{
+    margin-top: 150px;
+}
+.sec-about-mission .mission-sec .vlm-text{
+    padding-left:0;
+    padding-right: 5rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+.sec-about-mission .mission-sec .vlm-text>h2 , .about-banner .featured-post-sec .featured-post .featured-post-text>h2{
+    font-size: 3rem;
+}
+.sec-about-mission span.header-sub, .about-banner .featured-post-sec .featured-post .featured-post-text>span.header-sub{
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+}
+.about-banner .featured-post-sec .featured-post .vector-img img{
+    height: 100%;
+    object-fit: cover;
+}
+/* 2. sec-about-mission: 대표 인사말 */
+.sec-about-mission.misson-section-v8 .mission-sec{
+    margin-top: 150px;
+}
+.sec-about-mission .mission-sec .vlm-text{
+    padding-left:0;
+    padding-right: 5rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+.sec-about-mission .mission-sec .vlm-text>h2 , .about-banner .featured-post-sec .featured-post .featured-post-text>h2{
+    font-size: 3rem;
+}
+.sec-about-mission span.header-sub, .about-banner .featured-post-sec .featured-post .featured-post-text>span.header-sub{
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.56;
+    color: #ff4800;
+    margin-bottom: 0.5rem;
+}
+.sec-about-mission .mission-sec .vlm-text>div, .about-banner .featured-post-sec .featured-post .featured-post-text>div{
+    margin:3rem 0;
+}
+.sec-about-mission .mission-sec .vlm-text>div h3,.about-banner .featured-post-sec .featured-post .featured-post-text p{
+    color: #020202;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.sec-about-mission .mission-sec .vlm-text p{
+    font-size : 1rem;
+    line-height: 1.56;
+}
+.sec-about-mission .mission-sec .crlce-misz{
+    width: 100%;
+}
+.mission-sec .crlce-misz .crlce-list li.v1{
+    width: 300px;
+    height: 300px;
+}
+.sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li.v1 .crlce-info>i{
+    font-size : 7rem !important;
+    color: #fff;
+}
+.mission-sec .crlce-misz .crlce-list li.v2{
+    width: 250px;
+    height: 250px;
+}
+.sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li.v2 .crlce-info>i{
+    font-size : 5rem !important;
+    color: #fff;
+}
+.sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li.v3 .crlce-info>i{
+    font-size : 3rem !important;
+    color: #fff;
+}
+.sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li .crlce-info>h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:0;
+}
+
+/* 3. sec-about-count: 숫자 카운트 */
+.sec-about-count{
+    padding: 5rem 0;
+    border-top: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    margin-top : 5rem;
+}
+.sec-about-count .counter-sec-v6{
+    margin-top:0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.sec-about-count  .counter-sec-v6 li .counter-cont{
+    flex-direction: column;
+    justify-content: center;
+}
+.sec-about-count .counter-sec-v6 li .counter-cont h3{
+    color: #020202;
+    font-size: 2rem;
+}
+.sec-about-count .counter-sec-v6 li .counter-cont h2{
+    font-size: 4.5rem;
+}
+
+/* 4. sec-about-history : 펫클럽이 걸어온 길 */
+.sec-about-history{
+    background: #fef2d9;
+}
+.sec-about-history .sec-content{
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+}
+.sec-about-history .histroy-item{
+    font-size: 1.5rem;
+    color: #020202;
+    padding : 3rem 0;
+    border-bottom: solid 2px #ddd;
+}
+.sec-about-history .histroy-item img{
+    width: 100%;
+    max-width: 150px;
+}
+.sec-about-history .histroy-item ul{
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+}
+.sec-about-history .histroy-item ul > h6{
+    color: #b7b6b4;
+    font-size: 1.25rem;   
+}
+.sec-about-history .histroy-item ul li{
+    color: #020202;
+    font-size: 1rem;
+    line-height: 2;
+}
+.sec-about-history .histroy-item ul li::before {
+    content: "ㆍ";
+  }
+
+/* 5. sec-brand : 브랜드 소개 섹션 */
+.sec-brand .fzt-row{
+    /* justify-content: center; */
+    /* border-top: 1px solid #eaeaea; */
+    /* border-right: 1px solid #eaeaea;   */
+}
+.sec-brand .our-fzt{
+    padding: 2rem;
+    padding-bottom: 3rem;
+    /* border:0; */
+    /* border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea; */
+}
+.sec-brand .our-fzt:before{
+    display: none;;
+}
+.sec-brand .our-fzt>h3{
+    font-size: 1.25rem;
+    line-height: 1.56;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+.sec-brand .brand-icon{
+    display: block;
+    width: 70%;
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+    margin:auto;
+}
+.sec-brand .brand-more-btn {
+    margin-top: 3rem;
+}
+.sec-brand .brand-more-btn .btn-default{
+    background: #f0885d;
+    border:0;
+    box-shadow: 0px 3px 5px rgba(0,0,0 ,.2);
+}
+.sec-brand-intro  .swiper-pagination-bullet{
+    background : #fff;
+}
+.sec-brand-intro .swiper-pagination-bullet.swiper-pagination-bullet-active{
+   background: #f0885d;
+}
+
+
+
+
+
+/* ************************************************************* */
+/* board.html 뉴스&이벤트                                            */
+/* ************************************************************* */
+/* 1. board-banner */
+.board-banner{
+    background-image: url("../image/board-banner.png");
+}
+/* 2. sec-board-list : 뉴스&이벤트 리스트 */
+.sec-board-list .blog-main-content{
+    padding: 3rem 0 5rem;
+}
+.sec-board-list .blog-posts-layout2 .bg-post .bg-post-thumb>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit: cover;
+}
+.sec-board .blog-posts-layout2 .bg-post .bg-post-info .meta li,.sec-board .blog-sidebar .wd-posts .pp-post>span{
+    color: #b7b6b4;
+}
+.sec-board .blog-posts-layout2 .bg-post .bg-post-info .meta li:before{
+    background-color: #b7b6b4;
+}
+.sec-board-list .blog-posts-layout2 .bg-post .bg-post-info>h2 {
+    font-weight: 600;
+    line-height: 1.56;
+    margin-bottom: 1rem;
+}
+.sec-board-list .blog-sidebar .wd-posts .pp-post>h3{
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.56;
+}
+/* .sec-board-list .blog-sidebar .widget-categories ul li:first-child a,.sec-board-list .blog-sidebar .widget-categories ul li:first-child>span{
+    font-weight: 600;
+} */
+.sec-board-list .blog-sidebar .widget-categories ul li a,.sec-board-list .blog-sidebar .widget-categories ul li>span{
+    font-weight: 400;
+}
+.sec-board-list .blog-posts-layout2 .bg-post .bg-post-info p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* wedget */
+.sec-board .blog-sidebar .widget{
+    margin-bottom: 5rem;
+}
+.sec-board .blog-sidebar .widget-title{
+    margin-bottom: 2rem;
+}
+.sec-board .blog-sidebar .widget-search form input{
+    width: 100%;
+    color: #696b6f;
+    font-size: 1rem;
+    padding: 0 3rem 0 1.5rem;
+    height: 3.5rem;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+}
+.sec-board .blog-sidebar .widget-search form button{
+    right: 1rem;
+}
+.sec-board .blog-sidebar .widget-adver{
+    height: 300px;
+}
+.sec-board .blog-sidebar .widget-adver>img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sec-board .blog-sidebar .widget-categories ul li.active a, .sec-board .blog-sidebar .widget-categories ul li.active span{
+    padding-bottom: 0.5rem;
+    color: #020202;
+    font-weight: 600 !important;
+}
+/* ************************************************************* */
+/* post.html 뉴스&이벤트                                            */
+/* ************************************************************* */
+.sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-post .bg-post-info .meta{
+    margin-bottom: 1rem;
+    line-height: 1.56;
+}
+.sec-board-detail .blog-posts-layout2 .bg-post .bg-post-info p{
+    color: #020202;
+    margin-bottom : 2rem;
+}
+
+
+/* ************************************************************* */
+/* franchise-01.html 가맹정보 가맹소개                                */
+/* ************************************************************* */
+.franchise-banner{
+    background-image: url("../image/franchise-banner.png");
+}
+.fzt-tab .fzt-row{
+    border-top: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+}
+.fzt-tab .our-fzt{
+    padding: 2rem;
+    padding-bottom: 3rem;
+    border:0;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+}
+.fzt-tab .our-fzt:before{
+    left:2rem;
+    bottom: 3rem;
+}
+.fzt-tab .active .our-fzt{
+    background : #f0885d;
+}
+.fzt-tab .active .our-fzt:before{
+    background-color: #fff;
+}
+.fzt-tab .active .our-fzt h3, .fzt-tab .active .our-fzt p{
+    color: #fff;
+}
+/* sevice-item */
+#sec-franchise .service-item{
+    margin: auto;
+    margin-bottom: 5rem;
+}
+#sec-franchise .service-item .service-info p{
+    font-size: 1.25rem;
+    line-height: 1.56;
+}
+#service-item .service-info>h3 span{
+    color: #ddd;
+    font-family: ghanachoco;
+}
+
+/* ************************************************************* */
+/* franchise-02.html 가맹정보 수익구조                                */
+/* ************************************************************* */
+.sec-franchise-bm{
+    padding-bottom: 0;
+}
+.sec-franchise-bm .fzt-tab-content, .sec-franchise-process .fzt-tab-content,.sec-franchise-sales .fzt-tab-content{
+    background : url("../image/franchise-bm.jpg");
+    background-position: right -15px;
+    background-repeat: no-repeat;
+}
+.sec-franchise-bm  .sec-content{
+    background: #ececec;
+    padding-bottom: 5rem;
+}
+.sec-franchise-bm .prices-v10 .price-v10{
+    padding: 5rem 3rem;
+}
+/* table */
+.sec-franchise-bm table th:first-child{
+    width: 25%;
+}
+.sec-franchise-bm .btn-default{
+    font-size: 1.25rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    box-shadow: unset !important;
+}
+
+
+/* ************************************************************* */
+/* franchise-03.html 가맹정보 비용및절차                              */
+/* ************************************************************* */
+.sec-franchise-process .service_v1_content > .sec-header-2,.sec-franchise-sales .service_v1_content > .sec-header-2{
+    padding-bottom: 7rem; 
+}
+/* 1. process slider */
+.sec-franchise-process .our-services-sec{
+    background-color: #fef2d9;
+    padding: 8rem 0;
+}
+.sec-franchise-process .our-services-sec .our-services-content .svs-slider .slick-next,.sec-franchise-process .our-services-sec .our-services-content .svs-slider .slick-prev{
+    top: -2rem;
+}
+.our-services-sec .our-services-content .svs-slider .slick-next:hover:before, .our-services-sec .our-services-content .svs-slider .slick-prev:hover:before{
+    color: #f0885d;
+}
+.sec-franchise-process .our-services-sec .our-services-content .service-card-mile{
+    padding: 3rem;
+    margin-bottom: 0rem;
+}
+.our-services-sec .our-services-content .service-card-mile .cat-up{
+    right:auto;
+    left: 3rem;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color : #f0885d !important;
+}
+.our-services-sec .our-services-content .service-card-mile .cat-up:before{
+    display: none;
+}
+.our-services-sec .our-services-content .service-card-mile>img{
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+}
+.our-services-sec .our-services-content .service-card-mile p{
+    min-height: 3.5rem;
+}
+/* 2. 펫클럽 창업 예상비용 */
+.franchise-cost{
+    padding: 3rem 0;
+}
+.sec-franchise-process table td,.sec-franchise-process table th{
+    border-left:solid 1px #ddd;
+    border-top: solid 1px #ddd;
+}
+.sec-franchise-process table td:first-child{
+    font-weight: 600;
+    width: 20%;
+}
+.sec-franchise-process .btn-default{
+    font-size: 1.25rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    box-shadow: unset !important;
+}
+
+
+
+/* ************************************************************* */
+/* franchise-04.html 가맹정보 비용및절차                              */
+/* ************************************************************* */
+/* 1. table  */
+.sec-franchise-sales,.sec-franchise-sales .sec-content{
+    padding-bottom: 0;
+}
+.sec-franchise-sales .fzt-tab-content .franchise-cost{
+    background-image: url("../image/earn_bg.png");
+    background-color: #fff;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+.sec-franchise-sales table.main-table th{
+    background: #f0885d;
+    color: #fff;
+    border-left:solid 1px #ddd;
+    border-top: solid 1px #ddd;
+}
+.sec-franchise-sales table.main-table td{
+    background: #fff;
+    border-left:solid 1px #ddd;
+    border-top: solid 1px #ddd;
+    width: 25%;
+}
+.sec-franchise-sales table.main-table tr:nth-child(2) td,.sec-franchise-sales table.main-table tr td:nth-child(1){
+    background: #ececec;
+}
+.sec-franchise-sales table.main-table td.point{
+    color: #e10000;
+    font-weight:600;
+}
+/* 2. reveiw  */
+.sec-franchise-sales .franchise-review{
+    background : #ececec;
+}
+.franchise-review .card-review{
+    background : #fff;
+    padding: 2rem;
+}
+.franchise-review .card-review .card-head{
+    align-items: flex-start;
+    justify-content: flex-start;
+    background : #fff;
+    
+}
+.franchise-review .card-review .card-head .card-head-title{
+    margin-left: 1rem;
+}
+.sec-franchise-sales .franchise-review {
+    padding: 3rem 0;
+}
+.franchise-review .card-review .card-body{
+    background : transparent;
+}
+.franchise-review .card-review .card-body h5{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.56;
+    text-overflow: unset;
+    white-space: normal;
+    overflow: initial;
+}
+.franchise-review .card-review .card-body h6{
+    color: #e10000;
+    font-size: 1.25rem;
+    line-height: 2;
+    font-weight: 400;
+    text-overflow: unset;
+    white-space: normal;
+    overflow: initial;
+}
+.franchise-review .card-review .card-body p{
+    color: #020202;
+    line-height: 2;
+    margin-bottom: 2rem;
+
+    text-overflow: unset;
+    white-space: normal;
+    overflow: initial;
+    display: block;
+}
+/* main-banner swiper.js nav버튼 */
+.franchise-review .swiper{
+    margin-left: -5rem;
+    margin-right: -5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.franchise-review .swiper-button-nav{ 
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.franchise-review .swiper-button-next, .franchise-review .swiper-rtl .swiper-button-prev{
+    right: 0;
+    color: #b7b6b4;
+}
+.franchise-review .swiper-button-prev, .franchise-review  .swiper-rtl .swiper-button-next{
+    left: 0;
+    color: #b7b6b4;
+}
+.sec-franchise-sales .btn-default{
+    font-size: 1.25rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    box-shadow: unset !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************* */
+/* brand.html 브랜드                                           */
+/* ************************************************************* */
+/* 1. brand-banner : brand.html 배너 */
+.brand-banner{
+    background-image: url("../image/brand-banner.png");
+}
+/* 2. sec-brand-slide : 브랜드 소개 슬라이드 (데이스포, 벨버드) */
+.sec-brand-intro{
+    background-color : #fef2d9;
+}
+.sec-brand-intro .brand-intro-item {
+    text-align: left;
+    position: relative;
+    padding: 3rem;
+    height: auto;
+    /* border-radius: 1rem; */
+}
+.sec-brand-intro .brand-intro-item .thmb-img{
+    height: 180px;
+}
+.sec-brand-intro .brand-intro-item .thmb-img img{
+    height: 100%;
+    width: auto;
+}
+.sec-brand-intro .brand-intro-item h3{
+    font-size: 2rem;
+    color:#020202;
+    font-weight: 600;
+}
+.sec-brand-intro .brand-intro-item p{
+    color: #020202;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.56;
+    word-break: break-word;
+    white-space: pre-line;
+    margin-top: 1rem;
+}
+.sec-brand-intro .brand-intro-item p strong{
+    font-weight: 400;
+}
+.sec-brand-intro .brand-intro-item a.brand-page-link{
+    color: #020202;
+    /* text-decoration: underline; */
+    font-size: 1.125rem;
+    position: absolute;
+    top:3rem;
+    right:3rem;
+    border-bottom: solid 1px #020202;
+}
+#dayspaw p strong{
+    color: #b76d2d !important;
+}
+#bellbird p strong{
+    color: #2442b9 !important;
+}
+.sec-brand-intro .brand-product-Swiper .swiper-slide{
+    background: #fff;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.sec-brand-intro .brand-product-Swiper .swiper-slide img{
+    width: 100%;
+}
+.sec-brand-intro .brand-product-Swiper .swiper-slide span{
+    display: none;
+}
+.sec-brand-intro .brand-product-Swiper .swiper-pagination{
+    height: 2rem;
+}
+
+
+
+
+
+
+
+
+/* mobile 화면 */
+@media only screen and (max-width:991px) {
+    html,body {
+        font-size: 12px; 
+    }
+
+    /* ************************************************************* */
+    /* footer                                                        */
+    /* ************************************************************* */
+    /* 1. 하단 고정바 bottom-bar */
+    footer .bottom-bar{
+     border-radius: 5rem;
+     width: calc(100% - 1rem);
+     margin : 1rem 0.5rem;
+     box-shadow: 0px 3px 5px rgba(0,0,0 ,.2);
+     padding: 0.75rem 1.5rem;
+    }
+    footer .bottom-bar a{
+        border:0;
+        padding: 0;
+        position: relative;
+    }
+    footer .bottom-bar a::before{
+        content:"";
+        width: 1px;
+        height: 1rem;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left:-0.5rem;
+        transform: translateY(-50%);
+        /* left: -0.75rem */
+    }
+    footer .bottom-bar a.first::before{
+        height:0;
+    }
+    footer .bottom-bar .info-item{
+        justify-content: center;
+        padding: 0;
+    }
+    footer .bottom-bar .info-icon{
+        background: #fff;
+        width: 2rem;
+        height: 2rem;
+        margin:0 !important;
+    }
+    footer .bottom-bar .info-icon img{
+        width: 100%;
+        height: auto;
+    }
+    footer .bottom-bar .info-content{
+        min-width: 72px;
+        margin-left: 0.5rem;
+    }
+    footer .bottom-bar .info-content p{
+        color: #fff;
+        font-size: 0.8rem;
+        line-height: 1.36;
+    }
+    footer .bottom-bar .info-content p b{
+        font-weight: 400;
+    }
+    /* 2. 기본 footer */
+    footer .bottom-footer{
+        margin-top:0rem;
+        margin-bottom: 5rem;
+        padding: 3rem 0;
+    }
+
+
+
+    /* 공용 */
+    .container-fluid{
+        width: 100%;
+    }
+    .sec-main{
+        padding: 3rem 0;
+    }
+    .sec-main .sec-header,.sec-main .sec-header-2{
+        margin : 1rem 0;
+    }
+    .sec-main .sec-header h2{
+        font-size: 1.5rem;
+    }
+    .sec-main .sec-header h2 b, .sec-main .sec-header-2 h2{
+        font-size: 2.5rem;
+    }
+    .sec-main .sec-header-2 span.sub-title{
+        font-size: 1rem;
+        margin-bottom:0.25rem;
+    }
+    .sec-main .sec-header-2 p{
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.56;
+        white-space: normal;
+    }
+    .sec-main .sec-content{
+        padding: 1rem 0;
+    }
+    /* sub-banner */
+    .sub-banner{
+        height: 240px;
+        padding: 85px 0;
+    }
+    .sub-banner h2{
+        font-size: 2.5rem;
+    }
+    .sub-banner p{
+        word-break: keep-all;
+        white-space: pre-line;
+        font-size: 1.25rem;
+        line-height: 1.56;
+        margin-top:0;
+    }
+    /* table */
+    table.main-table{
+        margin-bottom: 1rem;
+    }
+    table.main-table th,table.main-table td{
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+    table.main-table th{
+        font-size: 1.125rem;
+    }
+    table.main-table tr:nth-child(2n){
+        background-color: #ececec;
+    }
+    .table-info{
+        margin-bottom: 2rem;
+    }
+    .table-info p{
+       font-size: 1rem;
+       line-height: 1.56;
+    }
+    /* modal */
+    .modal .modal-dialog .modal-header{
+        padding: 1rem;
+    }
+    .modal .modal-dialog .modal-body{
+        padding : 1rem 1rem 2rem;
+    }
+    .modal .modal-dialog .launch-info-table .launch-info-row{
+        padding: 0.75rem 0;
+    }
+    .modal .modal-dialog h5{
+        font-size: 1.25rem
+    }
+    .modal .modal-dialog h6{
+        font-size: 1rem;
+    }
+    .modal .modal-dialog p, .modal .modal-dialog span,.modal .modal-dialog .launch-document ol li{
+        font-size: 0.9rem;
+    }
+    #productModal .product-item{
+        flex-wrap: wrap;
+        padding: 0rem 1rem;
+    }
+    #productModal .product-item .product_img_cover{
+        margin: auto;
+    }
+    #productModal .product-info{
+        padding-left: 0;
+        margin-top:1rem
+    }
+    
+    
+    
+
+
+
+    /* ************************************************************* */
+    /* index.html 메인화면                                             */
+    /* ************************************************************* */
+    /* 1. main-banner : 메인배너 */
+    .main-banner:before{
+        display: none;
+    }
+        /* main-banner slide */
+    .main-banner .swiper .swiper-wrapper{
+        margin: 0px 1rem;
+    }
+    .main-banner .swiper .swiper-slide {
+        max-width: 85%;
+        background-color: #fff;
+        border-radius: 10px;
+        background-position: 60%;
+        height: 500px;
+        padding-top: 30%;
+    }
+    .main-banner .swiper .swiper-slide h2{
+        left: 1rem;
+        font-size: 1.25rem;
+    }
+    .main-banner .swiper .swiper-slide h2 span{
+        left: 0;
+        right: auto;
+        margin-left: 0rem;
+        bottom: -5.5rem;
+        font-size: 2rem;
+    }
+    .main-banner .swiper .swiper-slide h3 {
+        position:absolute;
+        left: 1rem;
+        bottom:3rem;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    .main-banner .swiper .swiper-slide h3 span{
+        font-size: 3rem;
+    }
+        /* main-banner swiper.js pagination - bullets타입 */
+    .swiper-pagination{
+        margin :0;
+        height: 3rem;
+    }
+        /* main-banner swiper.js pagination - custom타입 */
+    .main-banner .append-buttons{
+        justify-content: flex-start;
+        padding : 0 0.5rem;
+        height: 3.75rem;
+        margin : 0 0 0.5rem 0;
+    }
+    .main-banner .append-buttons span{
+        font-size: 0.9rem;
+        margin: 0.5rem !important;
+    }
+    .main-banner .append-buttons span.swiper-pagination-bullet-active{
+        padding: 0.5rem 1.25rem;
+        margin: 0.5rem;
+    }
+        /* main-banner swiper.js nav버튼 */
+    .main-banner .swiper-button-nav{
+        display: none;
+    }
+
+    /* 1-1. sec-main-info : 메인배너 하단 정보  */
+    .sec-main-info{
+        padding: 1rem 0 2rem 0!important;
+    }
+    .sec-main-info .row{
+        padding: 0 0.5rem;
+    }
+    .sec-main-info .row .col{
+        padding: 0 0.25rem;
+    }
+    .sec-main-info .info-item .info-icon{
+        background: #ececec;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+        margin: auto;
+        position: relative;
+        margin-bottom: 0.5rem;
+    }
+    .sec-main-info .info-item .info-icon img{
+        position: absolute;
+        top:50%;
+        left:50%;
+        width: 70%;
+        height: auto;
+        transform: translate(-50%,-50%);
+    }
+    .sec-main-info .info-item p{
+        word-break: keep-all;
+        white-space: pre-line;
+        font-size: 0.7rem;
+        text-align: center;
+        line-height: 1.56;
+    }
+
+    /* 2. sec-main-feature: 펫클럽을 선택하면 성공하는 이유  */
+    .sec-main-feature{
+        padding: 3rem 0;
+    }
+    .sec-main-feature .sec-header h2{
+        color: #999;
+        margin : 3rem 0;
+    }
+    .sec-main.sec-main-feature .sec-header h2::before{
+        height: 2.5rem;
+    }
+    .sec-main.sec-main-feature .sec-header h2::after{
+        height: 3rem;
+    }
+        /* card  */
+    .card-feature{
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+    }
+    .card-feature img {
+        float: left;
+        width: 3rem;
+        height: 3rem;
+        margin: 2rem;
+    }
+    .card-feature h5{
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+    .card-feature p{
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    /* 3. sec-main-store: 펫클럽 가맹점 월매출 확인  */
+    .sec-main-store .sec-content::before{
+        height: 500px;
+        top: -2rem;
+        background-size: cover;
+    }
+    .sec-main-store .sec-content .container-fluid{
+        width: 100%;
+        padding: 0;
+    }
+        /* .main-store-swiper  */
+    .main-store-swiper{
+        margin-top: 300px;
+    }
+    .main-store-swiper .swiper-slide{
+        padding: 1rem 0 1.5rem 0;
+        transform : scale(1);
+    }
+    .main-store-swiper .swiper-horizontal>.swiper-pagination-progressbar, .main-store-swiper .swiper-pagination-progressbar.swiper-pagination-horizontal, .main-store-swiper .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .main-store-swiper .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+        margin : 2rem auto;
+        max-width: 80%;
+        height: 0.25rem;
+    }
+    .main-store-swiper .swiper-slide img{
+        height: 3rem;
+    }
+    .main-store-swiper .swiper-slide h5{
+        font-size: 1rem;
+    }
+    .main-store-swiper .swiper-slide h5 b{
+        font-size: 1.25rem;
+    }
+    .main-store-swiper .swiper-slide h6{
+        font-size: 1rem;
+        width: 80%;
+        border-radius: 2rem;
+        margin: 2rem auto 1rem auto;
+    }
+    .main-store-swiper .swiper-slide p{
+        font-size: 1rem;
+    }
+    .main-store-swiper .swiper-slide p.store-price{
+        font-size: 1.5rem;
+    }
+        /* .more-button */
+    .sec-main-store .btn-store-more{
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+        box-shadow: 0px 3px 5px rgba(0,0,0 ,.2);
+    }
+
+    /* 4. sec-main-review: 펫클럽 실제점주 성공 창업 후기  */
+        /* .main-store-review  */
+    .sec-main-review .swiper .swiper-wrapper {
+        margin: 0px 1rem;
+    }
+    .sec-main-review .swiper-slide{
+        max-width: 85%;
+        border-radius: 10px;
+    }
+         /* review card */
+    .card-review .card-head .card-head-title {
+        max-width: calc(100% - 6rem);
+    }
+    .card-review .card-head h5{
+        font-size: 1.5rem;
+    }
+    .card-review .card-head p{
+        font-size: 1rem;
+    }
+    .card-review .card-head-img{
+        width: 5rem;
+        height: 5rem;
+        flex: 0 0 5rem;
+    }
+    .card-review .card-head,.card-review .card-body{
+        padding: 1.5rem;
+    }
+    .card-review .card-body h6{
+        font-size: 1.25rem;
+    }
+    .card-review .card-body p{
+        font-size: 1rem;
+    }
+
+    /* 4. sec-main-hotkeyword: 예비 점주가 궁금한 핫 키워드 바로가기   */
+    .sec-main-hotkeywords{
+        height: 500px;
+        background-size: cover;
+        background-position: left;
+    }
+    .sec-main-hotkeywords .sec-header h2{
+        text-align: center;
+    }
+    .sec-main-hotkeywords ul.keywords-list{
+        max-width: 150px;
+        margin-left: 1rem;
+    }
+    .sec-main-hotkeywords .keywords-list > li{
+        padding-right: 0rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+    .sec-main-hotkeywords .keywords-list > li > a{
+        border : solid 2px #f0885d;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+    }
+    .sec-main-hotkeywords .keywords-list > li > a:not(.active){
+        border : 0;
+        color: #696b6f;
+        background: transparent;
+
+    }
+    
+
+
+
+    /* ************************************************************* */
+    /* about.html 브랜드소개                                            */
+    /* ************************************************************* */
+    /* 1. about-banner : about.html 배너 */
+    /* 2. sec-about-mission: 대표 인사말 */
+    .sec-about-mission.misson-section-v8 .mission-sec{
+        margin-top : 2rem;
+    }
+    .sec-about-mission .mission-sec .vlm-text{
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+    .sec-about-mission .mission-sec .vlm-text>h2 , .about-banner .featured-post-sec .featured-post .featured-post-text>h2{
+        font-size: 2.5rem;
+    }
+    .sec-about-mission span.header-sub, .about-banner .featured-post-sec .featured-post .featured-post-text>span.header-sub{
+        font-size: 1.25rem;
+    }
+    .sec-about-mission .mission-sec .vlm-text>div, .about-banner .featured-post-sec .featured-post .featured-post-text>div{
+        margin:2rem 0;
+    }
+    .sec-about-mission .mission-sec .vlm-text>div h3,.about-banner .featured-post-sec .featured-post .featured-post-text p{
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    .mission-sec .crlce-misz:before{
+        display: none;
+    }
+    .sec-about-mission .mission-sec .crlce-misz{
+        height: auto;
+    }
+    .misson-section-v8 .mission-sec .crlce-misz:after{
+        display: none;
+    }
+    .mission-sec .crlce-misz .crlce-list{
+        display: flex;
+        justify-content: space-between;
+        max-width: 550px;
+        margin: auto;
+    }
+    .sec-about-mission .mission-sec .crlce-misz .crlce-list li.v1,.sec-about-mission .mission-sec .crlce-misz .crlce-list li.v2,.sec-about-mission .mission-sec .crlce-misz .crlce-list li.v3{
+        width: 30%;
+        height: auto;
+        padding-top: 30%;
+        margin-top: 0;
+
+        position: relative;
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: auto;
+    }
+    .sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li.v1 .crlce-info>i,.sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li.v2 .crlce-info>i,.sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li.v3 .crlce-info>i{
+        font-size: 2.5rem !important;
+        margin-bottom:0;
+    }
+    .sec-about-mission.misson-section-v8 .mission-sec .crlce-misz .crlce-list li .crlce-info>h3{
+        font-size: 1rem !important;
+    }
+
+    /* 3. sec-about-count : 숫자 카운트 */
+    .sec-about-count{
+        padding: 3rem 0;
+        margin-top: 3rem;
+    }
+    .sec-about-count.grow-business-v8 .counter-sec-v6 li{
+        width: 33.3333%;
+        max-width: 33.3333%;
+        -ms-flex: 0 0 33.3333%;
+        flex: 0 0 33.3333%;
+        margin-bottom: 1rem;
+    }
+    .sec-about-count .counter-sec-v6 li .counter-cont h3{
+        color: #020202;
+        font-size: 1.5rem;
+    }
+    .sec-about-count .counter-sec-v6 li .counter-cont h2{
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 4. sec-about-history : 펫클럽이 걸어온 길*/
+    .sec-about-history{
+        background: #fef2d9;
+    }
+    .sec-about-history .sec-content{
+        max-width: 760px;
+    }
+    .sec-about-history .histroy-item{
+        font-size: 1rem;
+        padding : 2rem 0;
+    }
+    .sec-about-history .histroy-item img{
+        width: 100%;
+        max-width: 150px;
+    }
+    .sec-about-history .histroy-item ul{
+        padding-left:0;
+    }
+    .sec-about-history .histroy-item ul > h6{
+        font-size: 1rem;   
+    }
+    .sec-about-history .histroy-item ul li{
+        font-size: 0.9rem;
+    }
+    /* 5. sec-brand : 브랜드 소개 섹션 */
+    .sec-brand .our-fzt{
+        padding: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    .sec-brand .our-fzt:before{
+        display: none;;
+    }
+    .sec-brand .our-fzt>h3{
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .sec-brand .brand-icon{
+        display: block;
+        width: 70%;
+        max-width: 150px;
+        max-height: 150px;
+        height: auto;
+        margin:auto;
+    }
+    .sec-brand .brand-more-btn {
+        margin-top: 2rem;
+    }
+    .sec-brand .brand-more-btn .btn-default{
+        font-size: 1rem;
+        height: 3rem;
+        line-height: 3rem;
+        padding: 0 2rem;
+        background: #f0885d;
+        box-shadow: 0px 3px 5px rgba(0,0,0 ,.2);
+    }
+    
+
+
+   
+    /* ************************************************************* */
+    /* board.html 뉴스&이벤트                                             */
+    /* ************************************************************* */
+    /* 1. board-banner 뉴스배너 */
+    /* 2. sec-board : 뉴스&이벤트 리스트 */
+    .sec-board .blog-main-content{
+        padding: 0;
+    }
+    .sec-board .blog-main-content .row , .sec-board .single-post-layout1 .row{
+        flex-direction: column-reverse !important;
+    }
+    /* wedget */
+    .sec-board .sidebar{
+        max-width: 540px;
+        margin:auto;
+        margin-bottom: 2rem;
+        margin-top:0;
+    }
+    .sec-board .blog-sidebar .widget{
+        margin-bottom: 3rem;
+    }
+    .sec-board .blog-sidebar .widget-title{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .sec-board .blog-sidebar .widget-search{
+        padding: 0 1rem;
+    }
+    .sec-board .blog-sidebar .widget-categories ul{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: solid 1px #ddd;
+    }
+    .sec-board .blog-sidebar .widget-categories ul li{
+        padding: 0;
+        border-bottom: 0;
+    }
+    .sec-board .blog-sidebar .widget-categories ul li:first-child a, .sec-board .blog-sidebar .widget-categories ul li:first-child>span{
+        font-weight: 400;
+    }
+    .sec-board .blog-sidebar .widget-categories ul li>span{
+        display: none;
+    }
+    .sec-board .blog-sidebar .widget-categories ul li.active a, .blog-sidebar .widget-categories ul li.active span{
+        padding-bottom: 0.5rem;
+        color: #020202;
+        font-weight: 600 !important;
+        border-bottom: solid 2px #020202;
+    }
+    /* post */
+    .sec-board-list .blog-posts-layout2 {
+        margin:auto;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-thumb{
+        height: 180px;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-info>h2, .sec-board-list .blog-sidebar .wd-posts .pp-post>h3{
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-info p{
+        font-size: 0.9rem;
+        line-height: 1.56;
+    }
+    .sec-board-list .blog-posts-layout2+.mile_pagination .pagination{
+        text-align: center !important; 
+    }
+
+    /* ************************************************************* */
+    /* post.html 뉴스&이벤트                                           */
+    /* ************************************************************* */
+
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2{
+        margin:auto;
+    }
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-post .bg-post-info>h2{
+        line-height: 1.56;
+        text-align: left;
+        margin-bottom: 5rem;
+        font-size: 1.75rem;
+    }
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-post .bg-post-info p{
+        font-size: 1.125rem;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+    .single-post-layout1 .blog-posts-layout2 .bg-post{
+        margin-bottom: 2rem;
+    }
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-posted-author{
+        padding: 2rem;
+        padding-top:0;
+    }
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-posted-author .author-info{
+        width: 100%;
+        padding-left:0;
+    }
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-posted-author .author-info a{
+        color: #696b6f
+    }
+
+
+    /* ************************************************************* */
+    /* franchise-01.html 가맹정보 가맹소개                                */
+    /* ************************************************************* */
+    .fzt-tab .our-fzt {
+        padding: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .fzt-tab .our-fzt:before{
+        left:1.5rem;
+        bottom: 1.5rem;
+    }
+    .fzt-tab .our-fzt h3{
+        font-size: 1.5rem;
+    }
+    .fzt-tab .our-fzt p{
+        font-size: 0.9rem;
+        line-height: 1.56;
+    }
+    .fzt-tab-content{
+        padding: 2rem 0;
+    }
+    /* service-item */
+    #sec-franchise .sec-header-2{
+        margin-bottom: 3rem;
+    }
+    #sec-franchise .services_items > div:last-child .service-item{
+        margin-bottom: 0 !important; 
+    }
+    #sec-franchise .service-item{
+        margin-bottom: 5rem !important;
+    }
+    #sec-franchise .service-item .service-thumb{
+        margin-bottom: 2rem;
+    }
+    #sec-franchise .service-item .service-info>h3{
+        font-size : 2rem;
+        margin-bottom: 1rem;
+    }
+    #sec-franchise .service-item .service-info p{
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    /* ************************************************************* */
+    /* franchise-02.html 가맹정보 수익구조                                */
+    /* ************************************************************* */
+    .sec-franchise-bm{
+        padding-bottom: 0;
+    }
+    .sec-franchise-bm .fzt-tab-content{
+        background: unset;
+        padding-bottom: 0;
+    }
+    .sec-franchise-bm .prices-v10 .price-v10{
+        padding: 2rem 1rem;
+    }
+    .sec-franchise-bm .sec-content{
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+    }
+        /* table  */
+    .sec-franchise-bm table th:first-child{
+        width: 25%;
+        min-width: 180px;
+    }
+
+
+
+    /* ************************************************************* */
+    /* franchise-03.html 가맹정보 비용및절차                              */
+    /* ************************************************************* */
+    /* 1. process slider */
+    .sec-franchise-process .fzt-tab-content,.sec-franchise-sales .fzt-tab-content{
+        background: unset
+    }
+    .sec-franchise-process .service_v1_content > .sec-header-2,.sec-franchise-sales .service_v1_content > .sec-header-2{
+        padding-bottom: 0rem; 
+    }
+    .sec-franchise-process .our-services-sec{
+        padding: 5rem 0;
+    }
+    .our-services-sec .our-services-content .svs-slider .slick-next:before, .our-services-sec .our-services-content .svs-slider .slick-prev:before{
+        font-size: 1rem;
+    }
+    .sec-franchise-process .our-services-sec .our-services-content .svs-slider .slick-next, .sec-franchise-process .our-services-sec .our-services-content .svs-slider .slick-prev{
+        top: -1rem;
+    }
+    .our-services-sec .our-services-content .service-card-mile .cat-up{
+        position:absolute;
+        top: 2rem;
+        left:2rem;
+    }
+    .sec-franchise-process .our-services-sec .our-services-content .svs-slider .slick-slide{
+        padding: 0 0.5rem ;
+    }
+    .sec-franchise-process .our-services-sec .our-services-content .service-card-mile{
+        padding: 2rem;
+    }
+    .our-services-sec .our-services-content .service-card-mile>h2{
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    .our-services-sec .our-services-content .service-card-mile p{
+        font-size: 1rem;
+        text-align: left;
+        line-height: 1.56;
+        min-height: 5rem;
+    }
+    /* 2. franchise-cost : 펫클럽 창업 예상비용  */
+    .prices-v10 .price-v10{
+        padding: 1rem;
+    }
+
+
+    /* ************************************************************* */
+    /* franchise-04.html 가맹정보 비용및절차                              */
+    /* ************************************************************* */
+    .sec-franchise-sales .fzt-tab-content .franchise-cost{
+        background-size: 150%;
+        background-repeat: repeat-y;
+        background-position: center;
+    }
+    .sec-franchise-sales.sec-main .fzt-tab-content .franchise-cost .sec-header-2 h2{
+        font-size: 1.5rem;
+    }
+    .franchise-review .card-review{
+        padding: 1rem;
+    }
+    /* swiper.js nav버튼 */
+    .franchise-review .swiper{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .franchise-review .swiper-button-nav{ 
+        display: none;
+    }
+   
+
+
+    /* ************************************************************* */
+    /* brand.html 브랜드                                           */
+    /* ************************************************************* */
+    /* 1. brand-banner : brand.html 배너 */
+    
+    /* 2. sec-brand-slide : 브랜드 소개 슬라이드 (데이스포, 벨버드) */
+    .sec-brand-intro .brand-intro-item {
+        padding: 2rem;
+        margin-bottom: 1rem;
+    }
+    .sec-brand-intro .brand-intro-item .thmb-img{
+        height: 100px;
+    }
+    .sec-brand-intro .brand-intro-item h3{
+        font-size: 1.5rem;
+    }
+    .sec-brand-intro .brand-intro-item p{
+        font-size: 1rem;
+        margin-top: 0.75rem;
+    }
+    .sec-brand-intro .brand-intro-item a.brand-page-link{
+        font-size: 1rem;
+        top:2rem;
+        right:2rem;
+    }
+    .sec-brand-intro{
+        padding-bottom: 0;
+    }
+    .sec-brand-intro .brand-product-Swiper{
+        margin-bottom: 5rem;
+    }
+    .sec-brand-intro .brand-product-Swiper .swiper-slide{
+        margin:0;
+    }
+    
+
+}
+
+
+/* mobile 화면 */
+@media only screen and (max-width:764px) {
+    /* ************************************************************* */
+    /* about.html 브랜드소개                                            */
+    /* ************************************************************* */
+
+    /* 3. sec-about-count : 숫자 카운트 */
+    .sec-about-count{
+        padding: 3rem 0 0 0;
+    }
+    .sec-about-count.grow-business-v8 .counter-sec-v6 li{
+        width: 100%;
+        max-width: 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        margin-bottom: 1rem;
+    }
+    .sec-about-count .counter-sec-v6 li .counter-cont h3{
+        color: #020202;
+        font-size: 1.5rem;
+    }
+    .sec-about-count .counter-sec-v6 li .counter-cont h2{
+        font-size: 4rem;
+    }
+
+     
+
+
+
+    /* ************************************************************* */
+    /* board.html 뉴스&이벤트                                           */
+    /* ************************************************************* */
+    .sec-board .sidebar{
+        margin-left:-15px;
+        margin-right:-15px;
+        width: calc(100% + 30px);
+        max-width: calc(100% + 30px);
+    }
+    .sec-board-list .blog-posts-layout2{
+        margin-left:-15px;
+        margin-right:-15px;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post{
+        margin-bottom: 2rem;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-thumb{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-thumb>img{
+        border-radius: 0;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-info{
+        text-align: left;
+        padding: 1rem;
+        margin-top: 0;
+    }
+    .sec-board-list .blog-posts-layout2 .bg-post .bg-post-info>h2, .sec-board-list .blog-sidebar .wd-posts .pp-post>h3{
+        margin-bottom: 0.5rem;
+    }
+    /* ************************************************************* */
+    /* post.html 뉴스&이벤트                                           */
+    /* ************************************************************* */
+
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-post {
+        padding : 0 1rem;
+    }
+    .sec-board-detail .single-post-layout1 .blog-posts-layout2 .bg-post .bg-post-info .meta{
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    
+
+
+}
+
+
+
+@media only screen and (max-width:1200px) {
+    html,body {
+        font-size: 14px; 
+    }
+    .container-fluid{
+        width: 100%;
+        min-width: 100%;
+    }
+    
+}
