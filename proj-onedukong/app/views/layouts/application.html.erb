@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>원두콩</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    
+    <link href="https://cdn.rawgit.com/singihae/Webfonts/master/style.css" rel="stylesheet" type="text/css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Style -->
+    <link href="/assets/stylesheets/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/stylesheets/lightbox.css" rel="stylesheet">
+    <link href="/assets/stylesheets/icon_style.css" rel="stylesheet">
+    <link href="/assets/stylesheets/animate.css" rel="stylesheet">
+    <link href="/assets/stylesheets/reset.css" rel="stylesheet">
+    <link href="/assets/stylesheets/main.css" rel="stylesheet">
+    <!-- Icons Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%#= image_tag(current_user.image, size: '20x20', style:'border-radius:3px;vertical-align:top;') if current_user.image %>
+          <%#= current_user.name %>
+          <%= current_user.email %>
+          <%= current_user.id %>
+          <b class="caret"></b>
+        </a>
+      </li>
+      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <% else %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "with Auth Blog", new_user_session_path %></li>
+          <li><%= link_to "with Facebook"%></li>
+          <li><%= link_to "with Kakao"%></li>
+        </ul>
+      </li>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <% end %>
+  </ul>  
+  <%= yield %>
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
+<script type="text/javascript">
+  WebFont.load({
+ 
+    // // For google fonts
+    // google: {
+    //   families: ['Droid Sans', 'Droid Serif']
+    // },
+    // For early access or custom font
+    custom: {
+        families: ['Nanum Gothic'],
+        urls: ['https://fonts.googleapis.com/earlyaccess/nanumgothic.css']
+    }
+ 
+  });
+</script>
+</body>
+</html>
